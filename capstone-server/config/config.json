@@ -18,11 +18,7 @@
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-<<<<<<< HEAD:server/config/config.json
-    "dialect": "postgres"
-=======
     "dialect": "postgres",
     "use_env_variable":"DATABASE_URL"
->>>>>>> af8563cb56d12157e16a4be793424a2ea2559040:capstone-server/config/config.json
   }
 }
