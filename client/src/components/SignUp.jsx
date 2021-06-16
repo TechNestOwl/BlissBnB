@@ -8,22 +8,22 @@ export default function SignUp() {
                 <input
                     type="text"
                     // value="username"
-                    placeHolder="Enter new username"
+                    placeholder="Enter new username"
                 ></input>
                 <input
                     type="email"
-                    placeHolder="Enter email"
+                    placeholder="Enter email"
                 // value="userEmail"
                 ></input>
                 <input
                     type="password"
                     // value="userPassword"
-                    placeHolder="Enter password"
+                    placeholder="Enter password"
                 ></input>
                 <input
                     type="password"
                     // value="userPasswordConfirmation"
-                    placeHolder="Confirm password"
+                    placeholder="Confirm password"
                 ></input>
                 <button
                     type="submit"

@@ -8,7 +8,7 @@ export default function Navigation() {
             <nav>
                 <div className="nav-logo">
                     <Link to="/">
-                    <img src={bliss} alt="logo"/>
+                        <img src={bliss} alt="logo" />
                     </Link>
                 </div>
                 <ul className="navLinkContainer">
@@ -22,12 +22,17 @@ export default function Navigation() {
                 <div>
                     <form className="navSearch">
                         <input
-                        type="text"
-                        placeHolder="Search homes"
+                            type="text"
+                            placeholder="Search homes"
                         >
                         </input>
+<<<<<<< Updated upstream
                         <button 
                         className="searchbtn" 
+=======
+                        <button
+                            className="searchbtn"
+>>>>>>> Stashed changes
                         >Search</button>
                     </form>
                 </div>
