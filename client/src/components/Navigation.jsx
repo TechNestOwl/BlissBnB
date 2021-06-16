@@ -8,26 +8,26 @@ export default function Navigation() {
             <nav>
                 <div className="nav-logo">
                     <Link to="/">
-                    <img src={bliss} alt="logo"/>
+                        <img src={bliss} alt="logo" />
                     </Link>
                 </div>
-                {/* <ul className="navLinkContainer">
+                <ul className="navLinkContainer">
                     <Link to="/">
                         <li className="navLinks">Home</li>
                     </Link>
                     <Link to="/HomeDisplay">
                     <li className="navLinks">Explore Homes</li>
                     </Link>
-                </ul> */}
+                </ul>
                 <div>
                     <form className="navSearch">
                         <input
-                        type="text"
-                        placeHolder="Search homes"
+                            type="text"
+                            placeholder="Search homes"
                         >
                         </input>
-                        <button 
-                        className="searchbtn"
+                        <button
+                            className="searchbtn"
                         >Search</button>
                     </form>
                 </div>

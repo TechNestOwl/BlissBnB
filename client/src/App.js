@@ -11,7 +11,6 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 
 
-
 export default function App() {
 	return (
 		<div>
@@ -21,7 +20,7 @@ export default function App() {
 				<Route exact path="/" component={Landing} />
 				<Route path="/homedisplay" component={HomeDisplay} />
 				<Route path="/contact" component={Contact} />
-				<Route path="/singin" component={SignIn} />
+				<Route path="/signin" component={SignIn} />
 				<Route path="/signup" component={SignUp} />
 				<Route path="*" component={NotFound} />
 				</Switch>
