@@ -18,7 +18,10 @@ module.exports = (sequelize, DataTypes) => {
     host: DataTypes.STRING,
     bedrooms: DataTypes.INTEGER,
     bathrooms: DataTypes.INTEGER,
-    guests: DataTypes.INTEGER
+    guests: DataTypes.INTEGER,
+    description: DataTypes.STRING,
+    space: DataTypes.STRING,
+    other: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Homes',
