@@ -11,14 +11,14 @@ export default function Navigation() {
                     <img src={bliss} alt="logo"/>
                     </Link>
                 </div>
-                {/* <ul className="navLinkContainer">
+                <ul className="navLinkContainer">
                     <Link to="/">
                         <li className="navLinks">Home</li>
                     </Link>
                     <Link to="/HomeDisplay">
                     <li className="navLinks">Explore Homes</li>
                     </Link>
-                </ul> */}
+                </ul>
                 <div>
                     <form className="navSearch">
                         <input
@@ -27,7 +27,7 @@ export default function Navigation() {
                         >
                         </input>
                         <button 
-                        className="searchbtn"
+                        className="searchbtn" 
                         >Search</button>
                     </form>
                 </div>
