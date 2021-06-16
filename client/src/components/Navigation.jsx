@@ -26,13 +26,8 @@ export default function Navigation() {
                             placeholder="Search homes"
                         >
                         </input>
-<<<<<<< Updated upstream
-                        <button 
-                        className="searchbtn" 
-=======
                         <button
                             className="searchbtn"
->>>>>>> Stashed changes
                         >Search</button>
                     </form>
                 </div>
