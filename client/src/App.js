@@ -9,6 +9,7 @@ import HomeDisplay from "./components/HomeDisplay"
 import Contact from "./components/Contact";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
+import SingleHomeDisplay from "./components/SingleHomeDisplay";
 
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
 				<Route path="/contact" component={Contact} />
 				<Route path="/signin" component={SignIn} />
 				<Route path="/signup" component={SignUp} />
+				<Route path="/singlehome" component={SingleHomeDisplay} />
 				<Route path="*" component={NotFound} />
 				</Switch>
 				<Footer />
