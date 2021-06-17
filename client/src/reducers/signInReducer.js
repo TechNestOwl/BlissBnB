@@ -10,7 +10,6 @@ const signInReducer = (state = initialState, action) => {
             return state = action.payload;
             default:
                 return state;
-
     }
 };
 export default signInReducer;
