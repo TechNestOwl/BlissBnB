@@ -1,16 +1,15 @@
 import React from "react";
-import './App.css';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Landing from "./components/Landing";
 import Navigation from "./components/Navigation";
-import NotFound from './components/NotFound';
-import HomeDisplay from "./components/HomeDisplay"
+import NotFound from "./components/NotFound";
+import HomeDisplay from "./components/HomeDisplay";
 import Contact from "./components/Contact";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import SingleHomeDisplay from "./components/SingleHomeDisplay";
-
 
 export default function App() {
 	return (
@@ -18,13 +17,13 @@ export default function App() {
 			<Router>
 				<Navigation />
 				<Switch>
-				<Route exact path="/" component={Landing} />
-				<Route path="/homedisplay" component={HomeDisplay} />
-				<Route path="/contact" component={Contact} />
-				<Route path="/signin" component={SignIn} />
-				<Route path="/signup" component={SignUp} />
-				<Route path="/singlehome" component={SingleHomeDisplay} />
-				<Route path="*" component={NotFound} />
+					<Route exact path="/" component={Landing} />
+					<Route path="/homedisplay" component={HomeDisplay} />
+					<Route path="/contact" component={Contact} />
+					<Route path="/signin" component={SignIn} />
+					<Route path="/signup" component={SignUp} />
+					<Route path="/singlehome" component={SingleHomeDisplay} />
+					<Route path="*" component={NotFound} />
 				</Switch>
 				<Footer />
 			</Router>
