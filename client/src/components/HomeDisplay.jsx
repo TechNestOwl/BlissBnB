@@ -1,13 +1,18 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
-
+// import { displayHomes } from "../actions/displayHomes.js"
+import { useDispatch, useSelector } from "react-redux";
+import Map from "./Map.jsx";
 
 export default function HomeDisplay() {
+    const dispatch = useDispatch();
+    useSelector(state => state.displayHomesReducer)
+    // useEffect(() => {
+    //     displayHomes(dispatch, homes)
+    // }, []);
+
     return (
-        <div>
-            <h1>Home Dispaly</h1>
-
-
+        <div className="homes__container">
+            <div className="map__container"><Map/></div>
         </div>
     )
 }
