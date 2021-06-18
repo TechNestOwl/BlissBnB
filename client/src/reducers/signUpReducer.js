@@ -1,8 +1,8 @@
 import SET_SIGN_UP from "../action-types/signUpAction-Type";
 
-const initialState = {
+const initialState = [{
 
-};
+}];
 
 const signUpReducer = (state = initialState, action) => {
     switch(action.type){

@@ -17,7 +17,7 @@ export default function Navigation() {
                         <li className="navLinks">Home</li>
                     </Link>
                     <Link to="/HomeDisplay">
-                    <li className="navLinks">Explore Homes</li>
+                        <li className="navLinks">Explore Homes</li>
                     </Link>
                 </ul>
                 <div>
@@ -25,6 +25,7 @@ export default function Navigation() {
                         <input
                             type="text"
                             placeholder="Search homes"
+                            value=""
                         >
                         </input>
                         <button

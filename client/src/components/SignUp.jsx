@@ -2,8 +2,12 @@
 // import { useDispatch, useSelector } from 'react-redux';
 // import { signUpInfo } from "../actions/signUpAction";
 
+<<<<<<< Updated upstream
 
 // export default function SignUp() {
+=======
+export default function SignUp() {
+>>>>>>> Stashed changes
 
 //     const dispatch = useDispatch();
 //     const [usernameSignUp, setUsernameSignUp] = useState("");
@@ -12,6 +16,7 @@
 
 //     const setUserSignUp = useSelector(state => state.signUpReducer);
 
+<<<<<<< Updated upstream
 //     const handleSubmit = (e) => {
 //         e.preventDefault();
 //         console.log({ usernameSignUp });
@@ -50,3 +55,42 @@
 //         </div>
 //     )
 // }
+=======
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log({ usernameSignUp });
+        signUpInfo(dispatch, setUsernameSignUp);
+    }
+    return (
+        <div>
+            <form className="signUpForm" onSubmit={e => { handleSubmit(e) }}>
+                <h1>Create User Account</h1>
+                <input
+                    type="text"
+                    value={usernameSignUp}
+                    placeholder="Enter new username"
+                ></input>
+                <input
+                    type="email"
+                    placeholder="Enter email"
+                    value={userEmail}
+                ></input>
+                <input
+                    type="password"
+                    value={userPassword}
+                    placeholder="Enter password"
+                ></input>
+                <input
+                    type="password"
+                    // value="userPasswordConfirmation"
+                    placeholder="Confirm password"
+                ></input>
+                <button
+                    type="submit"
+                    className="formBtn"
+                >Submit</button>
+            </form>
+        </div>
+    )
+}
+>>>>>>> Stashed changes
