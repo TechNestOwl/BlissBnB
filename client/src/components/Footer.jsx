@@ -6,11 +6,11 @@ export default function Footer() {
     return (
         <div className="footer">
             <h4 className="footerText">Bliss BnB</h4>
-                <ul>
-                    <Link to="/contact">
-                        <li>Contact Us</li>   
-                    </Link>
-                </ul>
+            <ul>
+                <Link to="/contact">
+                    <li>Contact Us</li>
+                </Link>
+            </ul>
         </div>
     )
 }

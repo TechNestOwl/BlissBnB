@@ -10,7 +10,7 @@ export default function SignIn(props) {
     const dispatch = useDispatch();
     const [usernameSignIn, setUsernameSignIn] = useState("");
 
-    const setUsername = useSelector(state => state.signInReducer)
+    const setUsername = useSelector(state => state.signInReducer);
 
 
     const handleSubmit = (e) => {

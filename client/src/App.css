@@ -26,7 +26,6 @@ nav {
 ul {
   list-style: none;
 }
-
 /* navigation end */
 
 /* SignUp */
@@ -41,6 +40,27 @@ ul {
   max-height: 15vh;
   padding: 5px;
 }
+/* Single Home Page */
+.propertyPictures {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* flex: wrap; */
+  justify-content: space-around;
+  align-items: center;
+}
+/* Single Home Page END */
+
+.slashedPriced {
+  font-style: italic;
+  text-decoration: line-through;
+  
+}
+
+/* Contat Form */
+.contactForm{
+}
+
 
 /* Footer start */
 .footer {
