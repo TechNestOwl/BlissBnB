@@ -1,108 +1,149 @@
 * {
-	margin: 0;
+  margin: 0;
 }
 
 body {
-	background-color: #e7f2f8;
+  background-color: #e7f2f8;
 }
 
 /* navigation start */
 
 nav {
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	min-height: 8vh;
-	max-height: 15vh;
-	background-color: #54627b;
-	padding: 5px;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  max-height: 15vh;
+  background-color: #54627b;
+  padding: 5px;
 }
 
 .navLinkContainer {
-	width: 40%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-direction: row;
-	text-decoration: none;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
 }
 ul {
-	list-style: none;
+  list-style: none;
 }
 /* navigation end */
 
 /* SignUp */
 
 .signUpForm {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-	min-height: 8vh;
-	max-height: 15vh;
-	padding: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  max-height: 15vh;
+  padding: 5px;
 }
 /* Single Home Page */
 .propertyPictures {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	/* flex: wrap; */
-	justify-content: space-around;
-	align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* flex: wrap; */
+  justify-content: space-around;
+  align-items: center;
 }
 /* Single Home Page END */
 
 .slashedPriced {
-	font-style: italic;
-	text-decoration: line-through;
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+/* Calendar */
+.react-calendar__month-view__weekdays {
+  color: gray;
+}
+
+.react-calendar__navigation button {
+  font-size: 1em;
 }
 
 /* Contat Form */
 .contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* searchHome Page */
+
+.homeSearchFormContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeSearchForm {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  width: 60%;
+}
+.searchFormBtn {
+  justify-content: center;
+  align-items: center;
+  width: 100px;
 }
 
 /* Footer start */
 .footer {
-	display: flex;
-	justify-content: space-around;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: #ecd5bb;
-	color: rgb(92, 30, 30);
-	list-style: none;
-	text-align: center;
-	text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ecd5bb;
+  color: rgb(92, 30, 30);
+  list-style: none;
+  text-align: center;
+  text-decoration: none;
 }
 .footer li {
-	color: rgb(58, 28, 28);
-	text-decoration: none;
+  color: rgb(58, 28, 28);
+  text-decoration: none;
 }
 .footerText {
-	font-size: smaller;
+  font-size: smaller;
 }
 /* Footer end */
 
 /* Not Found */
 .notFound {
-	text-align: center;
+  text-align: center;
 }
 .errMessage {
-	color: red;
-	/* text-decoration: double; */
+  color: red;
+  /* text-decoration: double; */
 }
 .searchbtn {
-	background-color: #710117;
-	color: aliceblue;
+  background-color: #710117;
+  color: aliceblue;
 }
 
 /* Home Display */
 
 .map__container {
-	height: 50vh;
-	height: 400px;
+  height: 50vh;
+  height: 400px;
+}
+.homeCardContainer {
+  padding-top: 5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
