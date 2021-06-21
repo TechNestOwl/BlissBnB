@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+
 const bcrypt = require("bcrypt");
+
 const passport = require("passport");
 const { createClient } = require("@supabase/supabase-js");
 const port = 3002;
@@ -73,8 +75,11 @@ function checkIfUserIsLoggedIn(req, res, next) {
 
 //signin page
 
+
 app.get("/signin", checkIfUserIsLoggedIn, (req, res) => {
   res.json("signin");
+
+
 });
 
 app.post(
@@ -88,8 +93,13 @@ app.post(
 
 //register page
 
+
 app.get("/", checkIfUserIsLoggedIn, (req, res) => {
   res.json("signup");
+
+app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
+  res.json("register");
+
 });
 
 app.post("/signup", async (req, res) => {
