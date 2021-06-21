@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const passport = require("passport");
 const { createClient } = require("@supabase/supabase-js");
 const port = 3002;
 const supabase = createClient(
@@ -67,7 +68,7 @@ function checkIfUserIsLoggedIn(req, res, next) {
 //login page
 
 app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
-  res.render("login");
+  res.json("login");
 });
 
 app.post(
@@ -82,7 +83,7 @@ app.post(
 //register page
 
 app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
-  res.render("register");
+  res.json("register");
 });
 
 app.post("/register", async (req, res) => {
@@ -111,20 +112,20 @@ app.post("/logout", (req, res) => {
 
 app.get("/logout", (req, res) => {
   req.logOut();
-  res.render("login");
+  res.json("login");
 });
 
 // homepage
 
 app.get("/", checkAuthenticated, async (req, res) => {
   const { data, error } = await supabase.from("Homes").select();
-  res.render("home", { locals: { homes: data } });
+  res.json("home", { locals: { homes: data } });
 });
 
 //reservations page
 app.get("/reservations", checkAuthenticated, async (req, res) => {
   const { data, error } = await supabase.from("Reservations").select();
-  res.render("reservations", { locals: { reservations: data } });
+  res.json("reservations", { locals: { reservations: data } });
 });
 
 app.post("/reservations", async (req, res) => {
