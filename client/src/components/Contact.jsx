@@ -3,8 +3,8 @@ import React from 'react'
 export default function Contact() {
     return (
         <div>
-            <h1>Contact Us</h1>
             <form className="contactForm">
+                <h1>Contact Us</h1>
                 <input type="text" placeholder="Name" required></input>
                 <br></br>
                 <input type="text" placeholder="Return address" required></input>
