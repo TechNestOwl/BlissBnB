@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+
+const bcrypt = require("bcrypt");
+
 const passport = require("passport");
 const { createClient } = require("@supabase/supabase-js");
 const port = 3002;
+// const initializedPassport = require("./passport-config");
 const supabase = createClient(
   "https://lekbkbafzntukffwtnpx.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMzk0NDg1OSwiZXhwIjoxOTM5NTIwODU5fQ.GZlazHQsVoxSF4Blz-Kh2I4TWnpRl9pmow0NpeAQpEM"
@@ -13,6 +17,10 @@ const pool = require("./db.js");
 //middleware
 app.use(express.json());
 app.use(cors());
+
+app.use(express.urlencoded({ extended: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get("/", (req, res) => {
   res.send("Welcome to node server");
@@ -48,14 +56,14 @@ async function getUserID(id) {
   const validUserID = data.find((user) => user.id === id);
   return validUserID;
 }
-
+// initializedPassport(passport, getUser, getUserID);
 // checking user authentication
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
-  res.redirect("/login");
+  res.redirect("/signin");
 }
 
 function checkIfUserIsLoggedIn(req, res, next) {
@@ -65,28 +73,36 @@ function checkIfUserIsLoggedIn(req, res, next) {
   next();
 }
 
-//login page
+//signin page
 
-app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
-  res.json("login");
+
+app.get("/signin", checkIfUserIsLoggedIn, (req, res) => {
+  res.json("signin");
+
+
 });
 
 app.post(
-  "/login",
+  "/signin",
   passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/login",
+    failureRedirect: "/signin",
     failureFlash: true,
   })
 );
 
 //register page
 
+
+app.get("/", checkIfUserIsLoggedIn, (req, res) => {
+  res.json("signup");
+
 app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
   res.json("register");
+
 });
 
-app.post("/register", async (req, res) => {
+app.post("/signup", async (req, res) => {
   try {
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -97,9 +113,9 @@ app.post("/register", async (req, res) => {
         Password: hashedPassword,
       },
     ]);
-    res.status(200).redirect("/login");
+    res.status(200).redirect("/signin");
   } catch (err) {
-    res.status(401).redirect("/register");
+    res.status(401).redirect("/signup");
   }
 });
 
