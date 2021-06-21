@@ -26,65 +26,124 @@ app.get("/homes", async (req, res) => {
   }
 });
 
-// app.get("/users", async (req, res) => {
-//   try {
-//     const getUsers = await pool.query("SELECT * from Users");
-//     res.json(getUsers.rows);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// });
+app.get("/users", async (req, res) => {
+  try {
+    const { data, error } = await supabase.from("Users").select();
+    res.send(data);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
 
-// app.get("/users/:id", async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const getUsersID = await pool.query("SELECT * from Users", [id]);
-//     res.json(getUsersID.rows);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// });
+// locate user information and matching to DB
 
-// app.post("/add_address", async (req, res) => {
-//   try {
-//     const { first_name, last_name, addresses, phone_number } = req.body;
-//     const getAddresses = await pool.query(
-//       "INSERT INTO addresses (first_name,last_name,addresses,phone_number) VALUES($1,$2,$3,$4)",
-//       [first_name, last_name, addresses, phone_number]
-//     );
-//     res.json(getAddresses.rows);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// });
+async function getUserEmail(email) {
+  const { data, error } = await supabase.from("Users").select();
+  const validUser = data.find((user) => user.Email === email);
+  return validUser;
+}
+async function getUserID(id) {
+  const { data, error } = await supabase.from("Users").select();
+  const validUserID = data.find((user) => user.id === id);
+  return validUserID;
+}
 
-// app.post("/edit_address/:id", async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const { first_name, last_name, addresses, phone_number } = req.body;
-//     const updateAddresse = await pool.query(
-//       "UPDATE addresses SET(first_name,last_name,addresses,phone_number) = ($1,$2,$3,$4) WHERE add_id = $5",
-//       [first_name, last_name, addresses, phone_number, id]
-//     );
-//     res.json("updated");
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// });
+// checking user authentication
 
-// app.post("/delete_address/:id", async (req, res) => {
-//   try {
-//     const { id } = req.params;
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect("/login");
+}
 
-//     const updateAddresse = await pool.query(
-//       "DELETE FROM addresses WHERE add_id = $1",
-//       [id]
-//     );
-//     res.json("Deleted");
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// });
+function checkIfUserIsLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/");
+  }
+  next();
+}
+
+//login page
+
+app.get("/login", checkIfUserIsLoggedIn, (req, res) => {
+  res.render("login");
+});
+
+app.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+  })
+);
+
+//register page
+
+app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
+  res.render("register");
+});
+
+app.post("/register", async (req, res) => {
+  try {
+    const salt = await bcrypt.genSalt();
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    const { data, error } = await supabase.from("User").insert([
+      {
+        Name: req.body.Name,
+        Email: req.body.email,
+        Password: hashedPassword,
+      },
+    ]);
+    res.status(200).redirect("/login");
+  } catch (err) {
+    res.status(401).redirect("/register");
+  }
+});
+
+// log out
+
+app.post("/logout", (req, res) => {
+  req.logOut();
+  res.redirect("/login");
+});
+
+app.get("/logout", (req, res) => {
+  req.logOut();
+  res.render("login");
+});
+
+// homepage
+
+app.get("/", checkAuthenticated, async (req, res) => {
+  const { data, error } = await supabase.from("Homes").select();
+  res.render("home", { locals: { homes: data } });
+});
+
+//reservations page
+app.get("/reservations", checkAuthenticated, async (req, res) => {
+  const { data, error } = await supabase.from("Reservations").select();
+  res.render("reservations", { locals: { reservations: data } });
+});
+
+app.post("/reservations", async (req, res) => {
+  try {
+    const { data, error } = await supabase.from("Reservations").insert([
+      {
+        UserId: req.body.userid,
+        CheckIn: req.body.checkin,
+        CheckOut: req.body.checkout,
+        Guests: req.body.guests,
+        HomeId: req.body.homeid,
+      },
+    ]);
+    console.log(data);
+    res.status(200).send(Ok);
+  } catch (err) {
+    res.status(401).send(Bad);
+  }
+});
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
