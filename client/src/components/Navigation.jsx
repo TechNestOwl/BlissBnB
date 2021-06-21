@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import bliss from "../assets/bliss.png"
 
@@ -17,7 +18,7 @@ export default function Navigation() {
                         <li className="navLinks">Home</li>
                     </Link>
                     <Link to="/HomeDisplay">
-                    <li className="navLinks">Explore Homes</li>
+                        <li className="navLinks">Explore Homes</li>
                     </Link>
                 </ul>
                 <div>
@@ -25,11 +26,19 @@ export default function Navigation() {
                         <input
                             type="text"
                             placeholder="Search homes"
+                            value=""
                         >
                         </input>
-                        <button
-                            className="searchbtn"
-                        >Search</button>
+                        <br></br>
+                        <Link to="/homesearch">
+                            <Button variant="primary">Search</Button>
+                        </Link>
+                        <Navbar.Text>
+                            Signed in as:
+                            <Link to="/signin">
+                                <a href="#login">Gill Guimaraes</a>
+                            </Link>
+                        </Navbar.Text>
                     </form>
                 </div>
             </nav>
