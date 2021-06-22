@@ -1,4 +1,4 @@
-import SET_SIGN_UP from "../action-types/signUpAction-Type";
+import SET_SIGN_UP from "../action-types/signUpAction-type";
 
 const initialState = [{
 

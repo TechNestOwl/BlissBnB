@@ -4,17 +4,47 @@ import { signUpInfo } from "../actions/signUpAction";
 
 export default function SignUp() {
 
-    const dispatch = useDispatch();
-    const [usernameSignUp, setUsernameSignUp] = useState("");
-    const [userEmail, setUserEmail] = useState("");
-    const [userPassword, setUserPassword] = useState("");
 
-    const setUserSignUp = useSelector(state => state.signUpReducer);
+
+
+    const dispatch = useDispatch();
+    const [userSignUpForm, setUserSignUp] = useState({
+        Username: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+    });
+    // const [userEmail, setUserEmail] = useState("");
+    // const [userPassword, setUserPassword] = useState("");
+    // const setUserSignUp = useSelector(state => state.signUpReducer);
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            Username: userSignUpForm.username,
+            firstName: userSignUpForm.firstName,
+            lastName: userSignUpForm.lastName,
+            email: userSignUpForm.email,
+            password: userSignUpForm.password,
+        })
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log({ usernameSignUp });
-        signUpInfo(dispatch, setUsernameSignUp);
+        fetch('http://localhost:3002/signup', requestOptions)
+            .then(response => response.json())
+        // .then(data => setPostId(data.id));
+        // dispatch(signUpInfo())
+        // console.log(signUpInfo);
+    }
+
+    const handleChange = (e) => {
+        setUserSignUp({
+            ...userSignUpForm,
+            [e.target.name]: e.target.value
+        })
     }
     return (
         <div>
@@ -22,23 +52,38 @@ export default function SignUp() {
                 <h1>Create User Account</h1>
                 <input
                     type="text"
-                    value={usernameSignUp}
+                    value={userSignUpForm.Username}
+                    onChange={handleChange}
                     placeholder="Enter new username"
-                ></input>
+                    name="Username"
+                />
+                <input
+                    type="text"
+                    value={userSignUpForm.firstName}
+                    onChange={handleChange}
+                    placeholder="Enter your name"
+                    name="firstName"
+                />
+                <input
+                    type="text"
+                    value={userSignUpForm.lastName}
+                    onChange={handleChange}
+                    placeholder="Enter your name"
+                    name="lastName"
+                />
                 <input
                     type="email"
                     placeholder="Enter email"
-                    value={userEmail}
+                    value={userSignUpForm.email}
+                    onChange={handleChange}
+                    name="email"
                 ></input>
                 <input
                     type="password"
-                    value={userPassword}
+                    value={userSignUpForm.password}
+                    onChange={handleChange}
                     placeholder="Enter password"
-                ></input>
-                <input
-                    type="password"
-                    // value="userPasswordConfirmation"
-                    placeholder="Confirm password"
+                    name="password"
                 ></input>
                 <button
                     type="submit"
