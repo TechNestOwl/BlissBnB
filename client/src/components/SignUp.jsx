@@ -23,7 +23,7 @@ export default function SignUp() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            Username: userSignUpForm.username,
+            Username: userSignUpForm.Username,
             firstName: userSignUpForm.firstName,
             lastName: userSignUpForm.lastName,
             email: userSignUpForm.email,
