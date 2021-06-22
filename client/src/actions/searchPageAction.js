@@ -1,5 +1,5 @@
-import { SEARCH_PAGE } from "../actions/";
+import SEARCH_PAGE from "../action-types/search-page-action-types";
 
 export const searchPageAction = (dispatch, Search) => {
-  return dispatch({ type: SEARCH_PAGE, ProductData: Search });
+  return dispatch({ type: SEARCH_PAGE, payload: Search });
 };
