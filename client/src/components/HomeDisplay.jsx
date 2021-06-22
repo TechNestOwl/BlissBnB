@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { displayHomes } from "../action-creators/homesActions.js";
-import { useDispatch, useSelector } from "react-redux";
-import { Data } from "../Data.js"
-import { HomesContainer, HomesDisplayContainer } from "./StyledHomes.js";
+// import { displayHomes } from "../action-creators/homesActions.js";
+// import { useDispatch, useSelector } from "react-redux";
+// import { Data } from "../Data.js"
+// import { HomesContainer, HomesDisplayContainer } from "./StyledHomes.js";
 import Map from "./Map.jsx";
-import "../styles/Homes.css";
-import HomeCard from "./HomeCard.jsx";
+// import "../styles/Homes.css";
+// import HomeCard from "./HomeCard.jsx";
 import { Button, Card } from 'react-bootstrap'
 import beachhouse from "../assets/coastalbeachhouse.jpeg";
 import loghouse from "../assets/loghome.jpeg";
@@ -62,6 +62,6 @@ export default function Homes() {
 
             </div>
         </div>
-        
+
     )
 }
