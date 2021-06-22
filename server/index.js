@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-
+const session = require("express-session");
 const bcrypt = require("bcrypt");
-
+const flash = require("express-flash");
 const passport = require("passport");
 const { createClient } = require("@supabase/supabase-js");
 const port = 3002;
-// const initializedPassport = require("./passport-config");
+const initializedPassport = require("./passport-config");
 const supabase = createClient(
   "https://lekbkbafzntukffwtnpx.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyMzk0NDg1OSwiZXhwIjoxOTM5NTIwODU5fQ.GZlazHQsVoxSF4Blz-Kh2I4TWnpRl9pmow0NpeAQpEM"
@@ -17,11 +17,17 @@ const pool = require("./db.js");
 //middleware
 app.use(express.json());
 app.use(cors());
-
+app.use(flash());
 app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 app.get("/", (req, res) => {
   res.send("Welcome to node server");
 });
@@ -56,7 +62,7 @@ async function getUserID(id) {
   const validUserID = data.find((user) => user.id === id);
   return validUserID;
 }
-// initializedPassport(passport, getUser, getUserID);
+initializedPassport(passport, getUserEmail, getUserID);
 // checking user authentication
 
 function checkAuthenticated(req, res, next) {
@@ -93,25 +99,28 @@ app.post(
 app.get("/", checkIfUserIsLoggedIn, (req, res) => {
   res.json("signup");
 });
-app.get("/register", checkIfUserIsLoggedIn, (req, res) => {
-  res.json("register");
-});
+// app.get("/signup", checkIfUserIsLoggedIn, (req, res) => {
+//   res.json("register");
+// });
 
 app.post("/signup", async (req, res) => {
   try {
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
-    const { data, error } = await supabase.from("User").insert([
+    const { data, error } = await supabase.from("Users").insert([
       {
-        Name: req.body.Name,
-        Email: req.body.email,
-        Password: hashedPassword,
+        Username: req.body.Username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: hashedPassword,
       },
     ]);
     res.status(200).redirect("/signin");
   } catch (err) {
     res.status(401).redirect("/signup");
   }
+  console.log(req.body);
 });
 
 // log out

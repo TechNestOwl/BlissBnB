@@ -1,7 +1,10 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
+import { searchPageAction } from '../actions/searchPageAction'
+import { useDispatch } from "react-redux";
 
-export default function HomeSearchPage() {
+export default function HomeSearchPage(props) {
+    const dispatch = useDispatch();
     return (
         <div>
             <div className="homeSearchFormContainer">
@@ -43,7 +46,7 @@ export default function HomeSearchPage() {
                         <Form.Label>Add key words to search:</Form.Label>
                         <Form.Control as="textarea" rows={3} />
                     </Form.Group>
-                    <Button variant="primary" className="searchFormBtn">Search</Button>
+                    <Button onClick={()=>searchPageAction(dispatch, props.homes)} variant="primary" className="searchFormBtn">Search</Button>
                 </form>
             </div>
         </div>
