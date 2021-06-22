@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
+import { searchPageAction } from '../actions/searchPageAction'
 
 export default function HomeSearchPage() {
     return (
@@ -43,7 +44,7 @@ export default function HomeSearchPage() {
                         <Form.Label>Add key words to search:</Form.Label>
                         <Form.Control as="textarea" rows={3} />
                     </Form.Group>
-                    <Button variant="primary" className="searchFormBtn">Search</Button>
+                    <Button onClick={()=>searchPageAction} variant="primary" className="searchFormBtn">Search</Button>
                 </form>
             </div>
         </div>
