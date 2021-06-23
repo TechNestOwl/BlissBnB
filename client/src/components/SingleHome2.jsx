@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Container, Row, Col, Card, Image, ListGroup } from 'react-bootstrap'
+import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
 import coastalbeachhouse from "../assets/coastalbeachhouse.jpeg"
@@ -28,22 +28,47 @@ export default function SingleHome2() {
         <div>
             <Container>
                 {/* Stack the columns on mobile by making one full-width and the other half-width */}
-                <Row>
-                    <Col xs={12} md={8}>
-                        <div className="propertyPictures">
-                            <img src={coastalbeachhouse} alt="pictureofhome" height="350px" width="auto"></img>
+                <div className="singleHomePhotoContainer">
+                    <Carousel>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src={beachHouseInterior1}
+                                alt="First slide"
+                            />
+                            <Carousel.Caption>
+                                <h3>First slide label</h3>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src={beachHouseInterior2}
+                                alt="Second slide"
+                            />
 
-                            {/* <img alt="pictureofhome"></img>
-                    <img alt="pictureofhome"></img>
-                    <img alt="pictureofhome"></img>
-                    <img alt="pictureofhome"></img> */}
-                        </div>
-                    </Col>
-                    <Col xs={6} md={4}>
-                        <img src={beachHouseInterior1} alt="pictureofhome" height="200px" width="auto"></img>
-                        <img src={beachHouseInterior2} alt="pictureofhome" height="200px" width="auto"></img>
-                    </Col>
-                </Row>
+                            <Carousel.Caption>
+                                <h3>Second slide label</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img
+                                className="d-block w-100"
+                                src={coastalbeachhouse}
+                                alt="Third slide"
+                            />
+
+                            <Carousel.Caption>
+                                <h3>Third slide label</h3>
+                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    </Carousel>
+
+                </div>
+
 
                 {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
                 <Row>
@@ -65,23 +90,13 @@ export default function SingleHome2() {
                                 <ListGroup.Item>Hottub</ListGroup.Item>
                                 <ListGroup.Item>Firepit</ListGroup.Item>
                                 <ListGroup.Item>Washer/Dryer</ListGroup.Item>
-                                <ListGroup.Item>Stacked stone gas fireplace</ListGroup.Item>
+                                <ListGroup.Item>Full stone fireplace</ListGroup.Item>
                                 <ListGroup.Item>Full kitchen</ListGroup.Item>
                                 <ListGroup.Item>Beach Access</ListGroup.Item>
                                 <ListGroup.Item>Charcoal BBQ grill</ListGroup.Item>
                             </ListGroup>
 
                         </div>
-                        <ul className="ammenityList">
-                            <li>Hottub</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
                     </Col>
                     <Col xs={6} md={4}>
 
