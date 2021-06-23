@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button, Jumbotron, Container } from 'react-bootstrap'
+import { Image, Button, Jumbotron, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import landingPhoto from "../assets/landingPhoto.jpg"
 
 export default function Landing() {
     return (
@@ -18,6 +19,9 @@ export default function Landing() {
                     </Link>
                 </Container>
             </Jumbotron>
+            <div className="landingBackgroundPhoto">
+                <Image src={landingPhoto} fluid />
+            </div>
         </div>
     )
 }

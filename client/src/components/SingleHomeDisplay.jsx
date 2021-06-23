@@ -23,7 +23,6 @@ export default function SingleHomeDisplay() {
         <div>
             <h1>Coastal Beach Home</h1>
 
-
             <div className="singleHomeProperty">
                 <div className="propertyPictures">
                     <img src={coastalbeachhouse} alt="pictureofhome" height="350px" width="auto"></img>
