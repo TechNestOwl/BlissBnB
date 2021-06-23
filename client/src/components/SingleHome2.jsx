@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Container, Row, Col, Card, Image } from 'react-bootstrap'
+import { Button, Container, Row, Col, Card, Image, ListGroup } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
 import coastalbeachhouse from "../assets/coastalbeachhouse.jpeg"
@@ -58,16 +58,29 @@ export default function SingleHome2() {
                         <p>6 Guests</p>
                         <p>3 Bedroom</p>
                         <p>2 Bath</p>
-                        <ul className="ammenityList">
+
+                        <div className="ammenityListContainer">
                             <h4>Amenities</h4>
+                            <ListGroup variant="flush">
+                                <ListGroup.Item>Hottub</ListGroup.Item>
+                                <ListGroup.Item>Firepit</ListGroup.Item>
+                                <ListGroup.Item>Washer/Dryer</ListGroup.Item>
+                                <ListGroup.Item>Stacked stone gas fireplace</ListGroup.Item>
+                                <ListGroup.Item>Full kitchen</ListGroup.Item>
+                                <ListGroup.Item>Beach Access</ListGroup.Item>
+                                <ListGroup.Item>Charcoal BBQ grill</ListGroup.Item>
+                            </ListGroup>
+
+                        </div>
+                        <ul className="ammenityList">
                             <li>Hottub</li>
-                            <li>Firepit</li>
-                            <li>Beach Access</li>
-                            <li>Big Screen TV</li>
-                            <li>Washer/Dryer</li>
-                            <li>Stacked stone gas fireplace</li>
-                            <li>Full kitchen</li>
-                            <li>Charcoal BBQ grill</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
                         </ul>
                     </Col>
                     <Col xs={6} md={4}>
