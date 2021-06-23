@@ -99,9 +99,9 @@ app.post(
 app.get("/", checkIfUserIsLoggedIn, (req, res) => {
   res.json("signup");
 });
-// app.get("/signup", checkIfUserIsLoggedIn, (req, res) => {
-//   res.json("register");
-// });
+app.get("/signup", checkIfUserIsLoggedIn, (req, res) => {
+  res.json("signup");
+});
 
 app.post("/signup", async (req, res) => {
   try {
@@ -116,7 +116,7 @@ app.post("/signup", async (req, res) => {
         password: hashedPassword,
       },
     ]);
-    res.status(200).redirect("/signin");
+    res.status(200).redirect("/");
   } catch (err) {
     res.status(401).redirect("/signup");
   }
