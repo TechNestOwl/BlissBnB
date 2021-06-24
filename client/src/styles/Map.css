@@ -1,3 +1,20 @@
-.map__container {
-	height: 400px;
+.map-container {
+	width: 1000px;
+	height: 1000px;
+	margin-left: 5rem;
+}
+.marker {
+	background-color: salmon;
+	border: 1px solid black;
+	color: black;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	border-radius: 50%;
+	z-index: 1 !important;
+	margin-bottom: 130rem;
+	margin-left: 25rem;
 }
