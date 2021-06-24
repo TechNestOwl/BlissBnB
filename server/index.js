@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -54,12 +58,15 @@ app.get("/users", async (req, res) => {
 
 async function getUserEmail(email) {
   const { data, error } = await supabase.from("Users").select();
+
   const validUser = data.find((user) => user.Email === email);
+  console.log(validUser);
   return validUser;
 }
 async function getUserID(id) {
   const { data, error } = await supabase.from("Users").select();
   const validUserID = data.find((user) => user.id === id);
+  console.log(validUserID);
   return validUserID;
 }
 initializedPassport(passport, getUserEmail, getUserID);
