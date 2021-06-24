@@ -12,6 +12,7 @@ import SignUp from "./components/SignUp";
 import SingleHomeDisplay from "./components/SingleHomeDisplay";
 import HomeSearchPage from "./components/HomeSearchPage";
 import SingleHome2 from "./components/SingleHome2";
+import loghouse from "./components/loghouse";
 
 export default function App() {
 	return (
@@ -24,8 +25,9 @@ export default function App() {
 					<Route path="/contact" component={Contact} />
 					<Route path="/signin" component={SignIn} />
 					<Route path="/signup" component={SignUp} />
-					<Route path="/singlehome" component={SingleHomeDisplay} />
+					<Route path="/lakehouse" component={SingleHomeDisplay} />
 					<Route path="/singlehome2" component={SingleHome2} />
+					<Route path="/loghouse" component={loghouse} />
 					<Route path="/homesearch" component={HomeSearchPage} />
 					<Route path="*" component={NotFound} />
 				</Switch>

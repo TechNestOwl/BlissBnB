@@ -36,11 +36,11 @@ export default function Homes() {
                     <Card.Body>
                         <Card.Title>Forest Log Cabin</Card.Title>
                         <Card.Text>
-                            Single family home with beach from access and lots of lorem ipsum dolor sit amet,
+                            Single family cottage with hiking trail access and lots of lorem ipsum dolor sit amet,
                             consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua.
                         </Card.Text>
-                        <Link to="/singlehome2">
+                        <Link to="/loghouse">
                             <Button variant="primary">Book Home</Button>
                         </Link>
                     </Card.Body>
@@ -50,11 +50,11 @@ export default function Homes() {
                     <Card.Body>
                         <Card.Title>Lakefront Home</Card.Title>
                         <Card.Text>
-                            Single family home with beach from access and lots of lorem ipsum dolor sit amet,
+                            Single family home with lake front access and lots of lorem ipsum dolor sit amet,
                             consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua.
                         </Card.Text>
-                        <Link to="/singlehome2">
+                        <Link to="/lakehouse">
                             <Button variant="primary">Book Home</Button>
                         </Link>
                     </Card.Body>

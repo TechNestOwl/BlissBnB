@@ -1,27 +1,26 @@
 import React, { useState } from 'react'
 import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
-import coastalbeachhouse from "../assets/coastalbeachhouse.jpeg"
-import beachHouseInterior1 from "../assets/beahHinterior1.jpeg"
-import beachHouseInterior2 from "../assets/beahHinterior2.jpeg"
+import loghome from "../assets/loghome.jpeg"
+import lakebackyard from "../assets/lakebackyard.jpeg"
+import lakejetski from "../assets/lakejetski.jpeg"
 import logo from "../assets/bliss.png"
-import hostHeadshot from "../assets/hostImage.jpeg";
+import lakehost from "../assets/lakehost.jpeg";
 
 
 
-export default function SingleHome2() {
+export default function loghouse() {
 
 
-    const dispatch = useDispatch();
-    const [calDate, setCalDate] = useState("");
+    // const dispatch = useDispatch();
+    // const [calDate, setCalDate] = useState("");
 
-    const calDateInput = useSelector(state => state.calReducer);
+    // const calDateInput = useSelector(state => state.calReducer);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         alert("Resrvation date set");
-
     }
 
 
@@ -37,7 +36,7 @@ export default function SingleHome2() {
                                 <Carousel.Item>
                                     <img
                                         className="d-block w-100"
-                                        src={coastalbeachhouse}
+                                        src={loghome}
                                         alt="First slide"
                                     />
                                     <Carousel.Caption>
@@ -48,24 +47,24 @@ export default function SingleHome2() {
                                 <Carousel.Item>
                                     <img
                                         className="d-block w-100"
-                                        src={beachHouseInterior1}
+                                        src={lakebackyard}
                                         alt="Second slide"
                                     />
 
                                     <Carousel.Caption>
-                                        <h3>Living Room Views</h3>
+                                        <h3>Lakefront Access</h3>
                                         {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
                                     </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item>
                                     <img
                                         className="d-block w-100"
-                                        src={beachHouseInterior2}
+                                        src={lakejetski}
                                         alt="Third slide"
                                     />
 
                                     <Carousel.Caption>
-                                        <h3>Gourmet Kitchen</h3>
+                                        <h3>Jet Ski!</h3>
                                         {/* <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
                                     </Carousel.Caption>
                                 </Carousel.Item>
@@ -111,8 +110,9 @@ export default function SingleHome2() {
                                     <div className="reservationCal">
                                         <div>
                                             <Calendar
-                                                // value={calDate}
-                                                onChange={e => setCalDate(e.target.value)} />
+                                            // value={calDate}
+                                            // onChange={e => setCalDate(e.target.value)}
+                                            />
                                         </div>
                                         <form onSubmit={handleSubmit} className="reservatinForm">
                                             <p>Guests:</p>
@@ -146,9 +146,9 @@ export default function SingleHome2() {
                 <Col sm={2}>
                     <div className="singleHomePageRight">
                         <Col lg={true} md={4}>
-                            <Image src={hostHeadshot} roundedCircle />
+                            <Image src={lakehost} roundedCircle />
                             <h4>Host:</h4>
-                            <h5>Gabriella Parks</h5>
+                            <h5>Rick Sanchez</h5>
                             <br></br>
                             <hr></hr>
                             <h4>About the home</h4>
