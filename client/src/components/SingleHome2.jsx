@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
 import coastalbeachhouse from "../assets/coastalbeachhouse.jpeg"
 import beachHouseInterior1 from "../assets/beahHinterior1.jpeg"
@@ -13,10 +13,10 @@ import hostHeadshot from "../assets/hostImage.jpeg";
 export default function SingleHome2() {
 
 
-    const dispatch = useDispatch();
-    const [calDate, setCalDate] = useState("");
+    // const dispatch = useDispatch();
+    // const [calDate, setCalDate] = useState("");
 
-    const calDateInput = useSelector(state => state.calReducer);
+    // const calDateInput = useSelector(state => state.calReducer);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -111,8 +111,9 @@ export default function SingleHome2() {
                                     <div className="reservationCal">
                                         <div>
                                             <Calendar
-                                                // value={calDate}
-                                                onChange={e => setCalDate(e.target.value)} />
+                                            // value={calDate}
+                                            // onChange={e => setCalDate(e.target.value)} 
+                                            />
                                         </div>
                                         <form onSubmit={handleSubmit} className="reservatinForm">
                                             <p>Guests:</p>
