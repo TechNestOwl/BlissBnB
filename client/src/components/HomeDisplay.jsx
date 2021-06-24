@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import Map from "./Map.jsx";
 // import "../styles/Homes.css";
 // import HomeCard from "./HomeCard.jsx";
-import { Button, Card, Badge } from 'react-bootstrap'
+import { Button, Card, Badge, Jumbotron, Container } from 'react-bootstrap'
 import beachhouse from "../assets/coastalbeachhouse.jpeg";
 import loghouse from "../assets/loghome.jpeg";
 import lakehouse from "../assets/lakehome.png";
@@ -34,9 +34,13 @@ export default function Homes() {
     }, [])
     return (
         <div className="homes__container">
-            <div className="map__container">
-                <Map />
-            </div>
+            <Jumbotron fluid>
+                <Container>
+                    <div className="map__container">
+                        <Map />
+                    </div>
+                </Container>
+            </Jumbotron>
             <div className="homeCardContainer">
                 {homes.map(home => {
 

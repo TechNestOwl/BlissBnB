@@ -149,8 +149,8 @@ ul {
 /* Home Display */
 
 .map__container {
-  height: 50vh;
-  height: 400px;
+  height: 25vh;
+  width: auto;
 }
 .homeCardContainer {
   padding-top: 1em;
