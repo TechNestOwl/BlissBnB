@@ -1,0 +1,28 @@
+{
+    "features": [
+        {
+                "type": "Feature",
+                "properties": {
+                    "title": "Post Apt in Resort Setting",
+                    "description":
+                        "Relax in this centrally located fully furnished apartment minutes to Downtown Atlanta"
+                },
+                "geometry": {
+                    "coordinates": [-84.3902644, 33.7489924],
+                    "type": "Point"
+                }
+        },
+        {
+                "type": "Feature",
+                "properties": {
+                    "title": "Historic Condo in Heart of City",
+                    "description":
+                        "The house is a newly renovated 1940s historical home with modern appliances and features in the heart of Atlanta. Every part of the city is easy accessible by foot or public transportation."
+                },
+                "geometry": {
+                    "coordinates": [-84.3902647, 33.7489924],
+                    "type": "Point"
+                }
+        }
+        ]
+    }

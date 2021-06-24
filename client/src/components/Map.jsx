@@ -11,7 +11,7 @@ const Marker = ({ onClick, children, feature }) => {
   const _onClick = (e) => {
     onClick(feature.properties.title);
     onClick(feature.properties.description);
-    };
+  };
 
   return (
     <button onClick={_onClick} className="marker">
@@ -65,7 +65,7 @@ const Map = () => {
 
     // Clean up on unmount
     return () => map.remove();
-  }, []); // eslint-disable-line git react-hooks/exhaustive-deps
+  }, []);
 
   const markerClicked = (title) => {
     window.alert(title);
