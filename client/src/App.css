@@ -131,6 +131,12 @@ ul {
 .notFound {
   text-align: center;
 }
+.notFoundBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .errMessage {
   color: red;
   /* text-decoration: double; */
