@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 import Map from "./Map.jsx";
 // import "../styles/Homes.css";
 // import HomeCard from "./HomeCard.jsx";
-import { Button, Card, Badge, Jumbotron, Container } from 'react-bootstrap'
+import { Button, Card, Badge, Jumbotron, Container, Row, Col } from 'react-bootstrap'
 import beachhouse from "../assets/coastalbeachhouse.jpeg";
 import loghouse from "../assets/loghome.jpeg";
 import lakehouse from "../assets/lakehome.png";
@@ -34,67 +34,75 @@ export default function Homes() {
     }, [])
     return (
         <div className="homes__container">
-            <Jumbotron fluid>
-                <Container>
-                    <div className="map__container">
-                        <Map />
-                    </div>
-                </Container>
-            </Jumbotron>
-            <div className="homeCardContainer">
-                {homes.map(home => {
+            <Container>
+                <Row>
 
-                    return (
-                        <Card style={{ width: "20rem", height: "800px" }}>
-                            <Card.Img variant="top" src={beachhouse} />
-                            <Card.Body>
-                                <Card.Title>
-                                    {/* // title */}
-                                    {home.Property_Name}
-                                    {/* // title filler text*/}
-                                    <Badge variant="secondary">
-                                        {/* {home.Other} */}
-                                    </Badge>
-                                </Card.Title>
-                                {/* // description */}
-                                <Card.Text>{home.Description}</Card.Text>
-                                <Link to="/singlehome2">
-                                    <Button variant="primary">Book Home</Button>
-                                </Link>
-                            </Card.Body>
-                        </Card>
-                    );
-                })}
+                    <Col xl={true}>
+                        <div className="map__container">
+                            <Map />
+                        </div>
+                    </Col>
 
-                {/* <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={loghouse} />
-                    <Card.Body>
-                        <Card.Title>Forest Log Cabin</Card.Title>
-                        <Card.Text>
-                            Single family cottage with hiking trail access and lots of lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                        </Card.Text>
-                        <Link to="/loghouse">
-                            <Button variant="primary">Book Home</Button>
-                        </Link>
-                    </Card.Body>
-                </Card>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={lakehouse} />
-                    <Card.Body>
-                        <Card.Title>Lakefront Home</Card.Title>
-                        <Card.Text>
-                            Single family home with lake front access and lots of lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
-                        </Card.Text>
-                        <Link to="/lakehouse">
-                            <Button variant="primary">Book Home</Button>
-                        </Link>
-                    </Card.Body>
-                </Card> */}
-            </div>
+                    <Col lg={true}>
+                        <div className="homeCardContainer">
+                            {homes.map(home => {
+
+                                return (
+                                    <Card style={{ width: "20rem", height: "800px" }}>
+                                        <Card.Img variant="top" src={beachhouse} />
+                                        <Card.Body>
+                                            <Card.Title>
+                                                {/* // title */}
+                                                {home.Property_Name}
+                                                {/* // title filler text*/}
+                                                <Badge variant="secondary">
+                                                    {/* {home.Other} */}
+                                                </Badge>
+                                            </Card.Title>
+                                            {/* // description */}
+                                            <Card.Text>{home.Description}</Card.Text>
+                                            <Link to="/singlehome2">
+                                                <Button variant="primary">Book Home</Button>
+                                            </Link>
+                                        </Card.Body>
+                                    </Card>
+                                );
+                            })}
+
+                            {/* <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={loghouse} />
+                                <Card.Body>
+                                    <Card.Title>Forest Log Cabin</Card.Title>
+                                    <Card.Text>
+                                        Single family cottage with hiking trail access and lots of lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.
+                                    </Card.Text>
+                                    <Link to="/loghouse">
+                                        <Button variant="primary">Book Home</Button>
+                                    </Link>
+                                </Card.Body>
+                            </Card>
+                            <Card style={{ width: '18rem' }}>
+                                <Card.Img variant="top" src={lakehouse} />
+                                <Card.Body>
+                                    <Card.Title>Lakefront Home</Card.Title>
+                                    <Card.Text>
+                                        Single family home with lake front access and lots of lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua.
+                                    </Card.Text>
+                                    <Link to="/lakehouse">
+                                        <Button variant="primary">Book Home</Button>
+                                    </Link>
+                                </Card.Body>
+                            </Card> */}
+                        </div>
+
+                    </Col>
+
+                </Row>
+            </Container>
         </div>
     );
 }

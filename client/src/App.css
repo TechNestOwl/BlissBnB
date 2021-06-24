@@ -148,10 +148,10 @@ ul {
 
 /* Home Display */
 
-.map__container {
+/* .map__container {
   height: 25vh;
   width: auto;
-}
+} */
 .homeCardContainer {
   padding-top: 1em;
   display: flex;
