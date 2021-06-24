@@ -37,8 +37,8 @@ export default function Homes() {
             <Container>
                 <Row>
 
-                    <Col xl={true}>
-                        <div className="map__container">
+                    <Col md={true}>
+                        <div>
                             <Map />
                         </div>
                     </Col>
@@ -103,6 +103,6 @@ export default function Homes() {
 
                 </Row>
             </Container>
-        </div>
+        </div >
     );
 }
