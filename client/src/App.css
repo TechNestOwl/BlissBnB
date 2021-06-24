@@ -131,6 +131,12 @@ ul {
 .notFound {
   text-align: center;
 }
+.notFoundBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .errMessage {
   color: red;
   /* text-decoration: double; */
@@ -147,10 +153,11 @@ ul {
   height: 400px;
 }
 .homeCardContainer {
-  padding-top: 5em;
+  padding-top: 1em;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
 }
 

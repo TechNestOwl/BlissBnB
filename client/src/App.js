@@ -11,6 +11,7 @@ import SignUp from "./components/SignUp";
 import SingleHomeDisplay from "./components/SingleHomeDisplay";
 import HomeSearchPage from "./components/HomeSearchPage";
 import SingleHome2 from "./components/SingleHome2";
+import loghouse from "./components/loghouse";
 
 import "./App.css";
 import React, { useState } from "react";
