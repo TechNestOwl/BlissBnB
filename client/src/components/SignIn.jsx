@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { signInInfo } from '../actions/signInAction';
+// import { signInInfo } from '../actions/signInAction';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 
@@ -8,16 +8,34 @@ import Button from 'react-bootstrap/Button';
 export default function SignIn(props) {
 
     const dispatch = useDispatch();
-    const [usernameSignIn, setUsernameSignIn] = useState("");
-    const [userPassword, setUserPassword] = useState("");
+    const [userSignInForm, setUserSignIn] = useState({
+        Username: "",
+        password: "",
+    });
 
-    const setUsername = useSelector(state => state.signInReducer);
-
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            Username: userSignInForm.Username,
+            password: userSignInForm.password,
+        })
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log({ usernameSignIn, userPassword });
-        signInInfo(dispatch, setUsernameSignIn);
+        fetch('http://localhost:3002/signup', requestOptions)
+            .then(response => response.json())
+        // .then(data => setPostId(data.id));
+        // dispatch(signUpInfo())
+        // console.log(signUpInfo);
+    }
+
+    const handleChange = (e) => {
+        setUserSignIn({
+            ...userSignInForm,
+            [e.target.name]: e.target.value
+        })
     }
 
     return (
@@ -26,15 +44,17 @@ export default function SignIn(props) {
                 <h1>Sign In</h1>
                 <input
                     type="text"
-                    // value={usernameSignIn}
-                    onChange={(e) => setUsernameSignIn(e.target.value)}
-                    placeholder="Enter new username"
+                    value={userSignInForm.Username}
+                    onChange={handleChange}
+                    placeholder="Enter username"
+                    name="Username"
                 />
                 <input
                     type="password"
-                    // value={userPassword}
-                    onChange={(e) => setUserPassword(e.target.value)}
+                    value={userSignInForm.password}
+                    onChange={handleChange}
                     placeholder="Enter password"
+                    name="password"
                 ></input>
 
                 {/* <button type="submit">Submit</button> */}

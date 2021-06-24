@@ -65,7 +65,7 @@ const Map = () => {
 
     // Clean up on unmount
     return () => map.remove();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line git react-hooks/exhaustive-deps
 
   const markerClicked = (title) => {
     window.alert(title);
