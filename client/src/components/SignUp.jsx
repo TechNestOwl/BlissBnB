@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { signUpInfo } from "../actions/signUpAction";
+// import { signUpInfo } from "../actions/signUpAction";
 
 export default function SignUp() {
-
-
 
 
     const dispatch = useDispatch();

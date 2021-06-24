@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Navbar } from 'react-bootstrap'
+import { Button, Navbar, FormControl, InputGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import bliss from "../assets/bliss.png"
 
@@ -7,6 +7,7 @@ import bliss from "../assets/bliss.png"
 export default function Navigation() {
     return (
         <div>
+
             <Navbar>
                 <Navbar.Brand>
                     <div className="nav-logo">
@@ -26,16 +27,19 @@ export default function Navigation() {
                 </ul>
                 <div>
                     <form className="navSearch">
-                        <input
-                            type="text"
-                            placeholder="Search homes"
-                            value=""
-                        >
-                        </input>
-                        <br></br>
-                        <Link to="/homesearch">
-                            <Button variant="primary">Search</Button>
-                        </Link>
+                        <InputGroup className="mb-3">
+                            <FormControl
+                                placeholder="Search for homes"
+                                aria-label="Search for homes"
+                                aria-describedby="basic-addon2"
+                            />
+                            <InputGroup.Append>
+                            </InputGroup.Append>
+                            <Link to="/homesearch">
+                                <Button variant="outline-secondary">Search</Button>
+                            </Link>
+
+                        </InputGroup>
                     </form>
                 </div>
                 <Navbar.Collapse className="justify-content-end">
