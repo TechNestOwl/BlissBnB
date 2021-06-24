@@ -144,7 +144,7 @@ export default function SingleHome2() {
                 </Col>
                 <Col sm={2}>
                     <div className="singleHomePageRight">
-                        <Col xs={6} md={4}>
+                        <Col lg={true} md={4}>
                             <Image src={hostHeadshot} roundedCircle />
                             <h4>Host:</h4>
                             <h5>Gabriella Parks</h5>
