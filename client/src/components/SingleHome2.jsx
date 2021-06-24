@@ -75,13 +75,13 @@ export default function SingleHome2() {
 
                         {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
                         <Row>
-                            <Col xs={6} md={4}>
+                            <Col sm={8}>
                                 <h4>About this space:</h4>
                                 <p>Single family home with with beach front access and loads of lorem ipsum dolor sit amet,
                                     consectetur adipiscing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
                             </Col>
-                            <Col xs={6} md={4}>
+                            <Col sm={4}>
                                 {/* <h4>About the home</h4>
                                 <p>6 Guests</p>
                                 <p>3 Bedroom</p>
@@ -105,12 +105,8 @@ export default function SingleHome2() {
 
                         {/* Columns are always 50% wide, on mobile and desktop */}
                         <Row>
-                            <Col xs={6}>
+                            <Col sm={true}>
                                 <div className="reservationCard">
-                                    <div className="reservationPrice">
-                                        <span className="slashedPriced">$189 </span>
-                                        <span> $133 / night</span>
-                                    </div>
                                     <div className="reservationCal">
                                         <div>
                                             <Calendar
@@ -129,7 +125,7 @@ export default function SingleHome2() {
 
                                 </div>
                             </Col>
-                            <Col xs={6}>
+                            <Col s={true}>
                                 <Card style={{ width: '18rem' }}>
                                     <Card.Img variant="top" src={logo} />
                                     <Card.Body>
@@ -155,6 +151,10 @@ export default function SingleHome2() {
                             <br></br>
                             <hr></hr>
                             <h4>About the home</h4>
+                            <div className="reservationPrice">
+                                <span className="slashedPriced">$189 </span>
+                                <span> $133 / night</span>
+                            </div>
                             <p>6 Guests</p>
                             <p>3 Bedroom</p>
                             <p>2 Bath</p>

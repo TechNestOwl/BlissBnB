@@ -6,7 +6,7 @@ import React, { useEffect } from 'react'
 import Map from "./Map.jsx";
 // import "../styles/Homes.css";
 // import HomeCard from "./HomeCard.jsx";
-import { Button, Card } from 'react-bootstrap'
+import { Button, Card, Badge } from 'react-bootstrap'
 import beachhouse from "../assets/coastalbeachhouse.jpeg";
 import loghouse from "../assets/loghome.jpeg";
 import lakehouse from "../assets/lakehome.png";
@@ -20,7 +20,7 @@ export default function Homes() {
                 <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={beachhouse} />
                     <Card.Body>
-                        <Card.Title>Coastal Beach Home</Card.Title>
+                        <Card.Title>Coastal Beach Home<Badge variant="secondary">Freshly Renovated!</Badge></Card.Title>
                         <Card.Text>
                             Single family home with beach from access and lots of lorem ipsum dolor sit amet,
                             consectetur adipiscing elit, sed do eiusmod tempor
