@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 // import { signUpInfo } from "../actions/signUpAction";
 
-export default function SignUp() {
+export default function SignUp(props) {
 
 
     const dispatch = useDispatch();
@@ -17,13 +17,14 @@ export default function SignUp() {
     // const [userPassword, setUserPassword] = useState("");
     // const setUserSignUp = useSelector(state => state.signUpReducer);
 
+useEffect(()=>{
+    console.log(props.userFormData)
+},[])
+
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            Username: userSignUpForm.Username,
-            firstName: userSignUpForm.firstName,
-            lastName: userSignUpForm.lastName,
             email: userSignUpForm.email,
             password: userSignUpForm.password,
         })
@@ -31,7 +32,7 @@ export default function SignUp() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3002/signup', requestOptions)
+        fetch('http://localhost:3002/signin', requestOptions)
             .then(response => response.json())
         // .then(data => setPostId(data.id));
         // dispatch(signUpInfo())
@@ -46,43 +47,64 @@ export default function SignUp() {
     }
     return (
         <div>
-            <form className="signUpForm" onSubmit={e => { handleSubmit(e) }}>
+            <form className="signUpForm" onSubmit={props.signUp}>
                 <h1>Create User Account</h1>
                 <input
+          name="email"
+          onChange={(e) =>
+            props.setUserFormData({
+              ...props.userFormData,
+              [e.target.name]: e.target.value,
+            })
+          }
+          type="text"
+          placeholder="email"
+        />
+        <input
+          name="password"
+          onChange={(e) =>
+            props.setUserFormData({
+              ...props.userFormData,
+              [e.target.name]: e.target.value,
+            })
+          }
+          type="text"
+          placeholder="password"
+        />
+        <input
                     type="text"
-                    value={userSignUpForm.Username}
-                    onChange={handleChange}
+                    
+                    onChange={(e) =>
+                        props.setUserFormData({
+                          ...props.userFormData,
+                          [e.target.name]: e.target.value,
+                        })
+                      }
                     placeholder="Enter new username"
                     name="Username"
                 />
                 <input
                     type="text"
-                    value={userSignUpForm.firstName}
-                    onChange={handleChange}
+                    onChange={(e) =>
+                        props.setUserFormData({
+                          ...props.userFormData,
+                          [e.target.name]: e.target.value,
+                        })
+                      }
                     placeholder="Enter your name"
                     name="firstName"
                 />
                 <input
                     type="text"
-                    value={userSignUpForm.lastName}
-                    onChange={handleChange}
+                    onChange={(e) =>
+                        props.setUserFormData({
+                          ...props.userFormData,
+                          [e.target.name]: e.target.value,
+                        })
+                      }
                     placeholder="Enter your name"
-                    name="lastName"
-                />
-                <input
-                    type="email"
-                    placeholder="Enter email"
-                    value={userSignUpForm.email}
-                    onChange={handleChange}
-                    name="email"
-                ></input>
-                <input
-                    type="password"
-                    value={userSignUpForm.password}
-                    onChange={handleChange}
-                    placeholder="Enter password"
-                    name="password"
-                ></input>
+                    name="lastName"/>
+        
                 <button
                     type="submit"
                     className="formBtn"

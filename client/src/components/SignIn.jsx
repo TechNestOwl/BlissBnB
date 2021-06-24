@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 // import { signInInfo } from '../actions/signInAction';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
+// import Landing from './Landing';
 
 
 export default function SignIn(props) {
@@ -40,29 +41,43 @@ export default function SignIn(props) {
 
     return (
         <div>
-            <form className="signUpForm" onSubmit={e => { handleSubmit(e) }}>
+            <form className="signUpForm" onSubmit={props.signIn}>
                 <h1>Sign In</h1>
                 <input
-                    type="text"
-                    value={userSignInForm.Username}
-                    onChange={handleChange}
-                    placeholder="Enter username"
-                    name="Username"
-                />
-                <input
-                    type="password"
-                    value={userSignInForm.password}
-                    onChange={handleChange}
-                    placeholder="Enter password"
-                    name="password"
-                ></input>
+          name="email"
+          type="text"
+          placeholder="email"
+          onChange={(e) =>
+            props.setSignInUserFormData({
+              ...props.signInUserFormData,
+              [e.target.name]: e.target.value,
+            })
+          }
+        />
+        <input
+          name="password"
+          type="text"
+          placeholder="password"
+          onChange={(e) =>
+            props.setSignInUserFormData({
+              ...props.signInUserFormData,
+              [e.target.name]: e.target.value,
+            })
+          }
+        />
 
                 {/* <button type="submit">Submit</button> */}
-                <Button type="submit" className="submitButton">Submit</Button>
+                <Button type="submit" variant="primary" className="searchFormBtn">Sign In</Button>
+
                 <h5>Don't have a user log-in?</h5>
-                <p>Continue here to sign up</p>
+                
+                {/* {signIn.map((user) => (
+                <Landing user={user} />
+                ))} */}
+
                 <Link to="/signup">
-                    <button href="#" className="submitButton">Sign Up</button>
+                <p>Continue here to sign up</p>
+                    
                 </Link>
 
             </form>
