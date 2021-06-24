@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -54,14 +58,19 @@ app.get("/users", async (req, res) => {
 // locate user information and matching to DB
 
 async function getUserEmail(email) {
-	const { data, error } = await supabase.from("Users").select();
-	const validUser = data.find((user) => user.Email === email);
-	return validUser;
+
+  const { data, error } = await supabase.from("Users").select();
+
+  const validUser = data.find((user) => user.Email === email);
+  console.log(validUser);
+  return validUser;
 }
 async function getUserID(id) {
-	const { data, error } = await supabase.from("Users").select();
-	const validUserID = data.find((user) => user.id === id);
-	return validUserID;
+  const { data, error } = await supabase.from("Users").select();
+  const validUserID = data.find((user) => user.id === id);
+  console.log(validUserID);
+  return validUserID;
+
 }
 initializedPassport(passport, getUserEmail, getUserID);
 // checking user authentication
@@ -100,28 +109,30 @@ app.post(
 app.get("/", checkIfUserIsLoggedIn, (req, res) => {
 	res.json("signup");
 });
-// app.get("/signup", checkIfUserIsLoggedIn, (req, res) => {
-//   res.json("register");
-// });
+app.get("/signup", checkIfUserIsLoggedIn, (req, res) => {
+  res.json("signup");
+});
 
 app.post("/signup", async (req, res) => {
-	try {
-		const salt = await bcrypt.genSalt();
-		const hashedPassword = await bcrypt.hash(req.body.password, salt);
-		const { data, error } = await supabase.from("Users").insert([
-			{
-				Username: req.body.Username,
-				firstName: req.body.firstName,
-				lastName: req.body.lastName,
-				email: req.body.email,
-				password: hashedPassword,
-			},
-		]);
-		res.status(200).redirect("/signin");
-	} catch (err) {
-		res.status(401).redirect("/signup");
-	}
-	console.log(req.body);
+
+  try {
+    const salt = await bcrypt.genSalt();
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    const { data, error } = await supabase.from("Users").insert([
+      {
+        Username: req.body.Username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: hashedPassword,
+      },
+    ]);
+    res.status(200).redirect("/");
+  } catch (err) {
+    res.status(401).redirect("/signup");
+  }
+  console.log(req.body);
+
 });
 
 // log out

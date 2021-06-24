@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 // import { displayHomes } from "../action-creators/homesActions.js";
 // import { useDispatch, useSelector } from "react-redux";
 // import { Data } from "../Data.js"
