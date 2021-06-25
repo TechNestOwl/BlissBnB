@@ -32,6 +32,7 @@ export default function App() {
   );
   const signUp = async (e) => {
     e.preventDefault();
+    console.log("tri")
     const { user, session, error } = await supabase.auth.signUp({
       Username: userFormData.Username,
       firstName: userFormData.firstName,
@@ -87,7 +88,10 @@ export default function App() {
                     userFormData={userFormData}
                   />
                 </Route>
-                <Route path="/singlehome" component={SingleHomeDisplay} />
+                {/* <Route path="/singlehome" component={SingleHomeDisplay} /> */}
+                <Route path="/singlehome">
+                  {!user ? <SignIn/> :<SingleHomeDisplay/>}
+                </Route>
                 <Route path="/singlehome2" component={SingleHome2} />
                 <Route path="/homesearch" component={HomeSearchPage} />
                 <Route path="*" component={NotFound} />

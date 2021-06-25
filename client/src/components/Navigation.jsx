@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Navbar, FormControl, InputGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import bliss from "../assets/bliss.png"
 
 
 export default function Navigation() {
+    const userInStorage = localStorage.getItem("supabase.auth.token");
+    const parsed = JSON.parse(userInStorage);
+    const [user, setUser] = useState(
+        parsed ? parsed.currentSession?.user?.email : ""
+    );
     return (
         <div>
 
@@ -46,7 +51,7 @@ export default function Navigation() {
                     <Navbar.Text>
                         Signed in as:
                         <Link to="/signin">
-                            <a href="#login"> Gill Guimaraes</a>
+                            <a href="#login">{user}}</a>
                         </Link>
                     </Navbar.Text>
                 </Navbar.Collapse>
