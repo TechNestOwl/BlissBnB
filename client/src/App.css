@@ -94,6 +94,9 @@ ul {
 .commentsSection {
   border-color: black;
 }
+.reservationsContainer {
+  padding-top: 2em;
+}
 /* Single Home Page END */
 
 .slashedPriced {

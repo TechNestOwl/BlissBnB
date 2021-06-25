@@ -138,43 +138,45 @@ export default function SingleHome2() {
 
 
                         {/* Columns are always 50% wide, on mobile and desktop */}
-                        <Row>
-                            <Col sm={true}>
-                                <div className="reservationCard">
-                                    <div className="reservationCal">
-                                        <div>
-                                            <Calendar
-                                            // value={calDate}
-                                            // onChange={e => setCalDate(e.target.value)} 
-                                            />
+                        <div className="reservationsContainer">
+                            <Row>
+                                <Col sm={true}>
+                                    <div className="reservationCard">
+                                        <div className="reservationCal">
+                                            <div>
+                                                <Calendar
+                                                // value={calDate}
+                                                // onChange={e => setCalDate(e.target.value)} 
+                                                />
+                                            </div>
+                                            <form onSubmit={handleSubmit} className="reservatinForm">
+                                                <p>Guests:</p>
+                                                <button>-</button>
+                                                <span >0</span>
+                                                <button>+</button>
+                                                <button className="submitBtn" type="submit">Add Date</button>
+                                            </form>
+
                                         </div>
-                                        <form onSubmit={handleSubmit} className="reservatinForm">
-                                            <p>Guests:</p>
-                                            <button>-</button>
-                                            <span >0</span>
-                                            <button>+</button>
-                                            <button className="submitBtn" type="submit">Add Date</button>
-                                        </form>
 
                                     </div>
-
-                                </div>
-                            </Col>
-                            <Col s={true}>
-                                <Card style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={logo} />
-                                    <Card.Body>
-                                        <Card.Title>Coastal Beach Home</Card.Title>
-                                        <Card.Text>
-                                            Single family home with beach from access and lots of lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua.
-                                        </Card.Text>
-                                        <Button variant="primary">Book Home</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        </Row>
+                                </Col>
+                                <Col s={true}>
+                                    <Card style={{ width: '18rem' }}>
+                                        {/* <Card.Img variant="top" src={logo} /> */}
+                                        <Card.Body>
+                                            <Card.Title>Home Reservation</Card.Title>
+                                            <Card.Text>
+                                                To reserve this home you must... lots of lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit, sed do eiusmod tempor
+                                                incididunt ut labore et dolore magna aliqua.
+                                            </Card.Text>
+                                            <Button variant="primary">Book Home</Button>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </div>
                     </div>
                 </Col>
                 <Col sm={2}>
