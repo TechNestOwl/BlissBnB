@@ -42,11 +42,11 @@ export default function Landing() {
                             </Col>
                             <Col>
                                 <Image src={entirehome} fluid className="landigCardPhotos" />
-                                <h3>Entire Homes</h3>
+                                <h3 className="landingCardText">Entire Homes</h3>
                             </Col>
                             <Col>
                                 <Image src={petsallowed} fluid className="landigCardPhotos" />
-                                <h3>Pets Allowd</h3>
+                                <h3 className="landingCardText">Pets Allowd</h3>
                             </Col>
                         </Row>
                     </Container>
