@@ -227,8 +227,10 @@ export default function SingleHome2() {
                             <hr></hr>
                             <h4>About the home</h4>
                             <div className="reservationPrice">
-                                <span className="slashedPriced">$189 </span>
-                                <span> $133 / night</span>
+                                <h5>
+                                    <span className="slashedPriced">$189 </span>
+                                    <span> $133 / night</span>
+                                </h5>
                             </div>
                             <p>6 Guests</p>
                             <p>3 Bedroom</p>
