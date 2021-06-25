@@ -69,6 +69,9 @@ ul {
   padding-top: 150px;
 }
 /* Single Home Page */
+.singleHomeParentContainer {
+  padding-top: 1em;
+}
 .propertyPictures {
   width: 100%;
   display: flex;
