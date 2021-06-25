@@ -75,7 +75,7 @@ export default function App() {
                 <Route path="/contact" component={Contact} />
     
                 <Route exact path="/signin">
-                  <SignIn
+                  <SignIn 
                     signIn={signIn}
                     signInUserFormData={signInUserFormData}
                     setSignInUserFormData={setSignInUserFormData}
@@ -99,8 +99,8 @@ export default function App() {
               <Footer />
             </Router>
           </div>
-      <h1>Sign Up</h1>
-      <form onSubmit={signUp}>
+      {/* <h1>Sign Up</h1> */}
+      {/* <form onSubmit={signUp}>
         <input
           name="email"
           onChange={(e) =>
@@ -152,7 +152,7 @@ export default function App() {
         <input type="submit" placeholder="login" />
       </form>
       <h1>Welcome {user}</h1>
-      <button onClick={signOut}>Sign Out</button>
+      <button onClick={signOut}>Sign Out</button> */}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button, Navbar, FormControl, InputGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import bliss from "../assets/bliss.png"
+// import signOut from "../App"
 
 
 export default function Navigation() {
@@ -51,8 +52,9 @@ export default function Navigation() {
                     <Navbar.Text>
                         Signed in as:
                         <Link to="/signin">
-                            <a href="#login">{user}}</a>
+                            <a href="#login">{user}</a>
                         </Link>
+                        {/* <Button onClick={signOut}>Sign Out</Button> */}
                     </Navbar.Text>
                 </Navbar.Collapse>
             </Navbar>
