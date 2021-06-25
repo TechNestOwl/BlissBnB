@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel } from 'react-bootstrap'
+import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel, Media, InputGroup, FormControl } from 'react-bootstrap'
 // import { useDispatch, useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
 import coastalbeachhouse from "../assets/coastalbeachhouse.jpeg"
@@ -75,73 +75,108 @@ export default function SingleHome2() {
 
 
                         {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
-                        <Row>
-                            <Col sm={8}>
-                                <h4>About this space:</h4>
-                                <p>Single family home with with beach front access and loads of lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-                            </Col>
-                            <Col sm={4}>
-                                {/* <h4>About the home</h4>
+                        <div className="aboutHomeContainer">
+                            <Row>
+                                <Col sm={8}>
+                                    <h4>About this space:</h4>
+                                    <p>Single family home with with beach front access and loads of lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                                </Col>
+                                <Col sm={4}>
+                                    {/* <h4>About the home</h4>
                                 <p>6 Guests</p>
                                 <p>3 Bedroom</p>
                                 <p>2 Bath</p> */}
-                                <div className="ammenityListContainer">
-                                    <h4>Amenities</h4>
-                                    <ListGroup variant="flush">
-                                        <ListGroup.Item>Hottub</ListGroup.Item>
-                                        <ListGroup.Item>Firepit</ListGroup.Item>
-                                        <ListGroup.Item>Washer/Dryer</ListGroup.Item>
-                                        <ListGroup.Item>Full stone fireplace</ListGroup.Item>
-                                        <ListGroup.Item>Full kitchen</ListGroup.Item>
-                                        <ListGroup.Item>Beach Access</ListGroup.Item>
-                                        <ListGroup.Item>Charcoal BBQ grill</ListGroup.Item>
-                                    </ListGroup>
+                                    <div className="ammenityListContainer">
+                                        <h4>Amenities</h4>
+                                        <ListGroup variant="flush">
+                                            <ListGroup.Item>Hottub</ListGroup.Item>
+                                            <ListGroup.Item>Firepit</ListGroup.Item>
+                                            <ListGroup.Item>Washer/Dryer</ListGroup.Item>
+                                            <ListGroup.Item>Full stone fireplace</ListGroup.Item>
+                                            <ListGroup.Item>Full kitchen</ListGroup.Item>
+                                            <ListGroup.Item>Beach Access</ListGroup.Item>
+                                            <ListGroup.Item>Charcoal BBQ grill</ListGroup.Item>
+                                        </ListGroup>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
+                        <div className="commentsSection">
+                            <h3>Comments:</h3>
+                            <Media>
+                                <img
+                                    width={64}
+                                    height={64}
+                                    className="mr-3"
+                                    src={hostHeadshot}
+                                    alt="Generic placeholder"
+                                    style={{ borderRadius: 30 }}
+                                />
+                                <Media.Body>
+                                    <h5>Welcome!</h5>
+                                    <p>
+                                        This is my lovely home with renovated everything. Herea are details, Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                        ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
+                                        tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+                                        Donec lacinia congue felis in faucibus.
+                                    </p>
+                                </Media.Body>
+                            </Media>
+                            <InputGroup className="mb-3">
+                                <FormControl
+                                    placeholder="Enter comment.."
+                                    aria-label="userComment"
+                                    aria-describedby="basic-addon2"
+                                />
+                                <InputGroup.Append>
+                                    <Button variant="outline-secondary">Post</Button>
+                                </InputGroup.Append>
+                            </InputGroup>
+                        </div>
 
-                                </div>
-                            </Col>
-
-                        </Row>
 
                         {/* Columns are always 50% wide, on mobile and desktop */}
-                        <Row>
-                            <Col sm={true}>
-                                <div className="reservationCard">
-                                    <div className="reservationCal">
-                                        <div>
-                                            <Calendar
-                                            // value={calDate}
-                                            // onChange={e => setCalDate(e.target.value)} 
-                                            />
+                        <div className="reservationsContainer">
+                            <Row>
+                                <Col sm={true}>
+                                    <div className="reservationCard">
+                                        <div className="reservationCal">
+                                            <div>
+                                                <Calendar
+                                                // value={calDate}
+                                                // onChange={e => setCalDate(e.target.value)} 
+                                                />
+                                            </div>
+                                            <form onSubmit={handleSubmit} className="reservatinForm">
+                                                <p>Guests:</p>
+                                                <button>-</button>
+                                                <span >0</span>
+                                                <button>+</button>
+                                                <button className="submitBtn" type="submit">Add Date</button>
+                                            </form>
+
                                         </div>
-                                        <form onSubmit={handleSubmit} className="reservatinForm">
-                                            <p>Guests:</p>
-                                            <button>-</button>
-                                            <span >0</span>
-                                            <button>+</button>
-                                            <button className="submitBtn" type="submit">Add Date</button>
-                                        </form>
 
                                     </div>
-
-                                </div>
-                            </Col>
-                            <Col s={true}>
-                                <Card style={{ width: '18rem' }}>
-                                    <Card.Img variant="top" src={logo} />
-                                    <Card.Body>
-                                        <Card.Title>Coastal Beach Home</Card.Title>
-                                        <Card.Text>
-                                            Single family home with beach from access and lots of lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua.
-                                        </Card.Text>
-                                        <Button variant="primary">Book Home</Button>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        </Row>
+                                </Col>
+                                <Col s={true}>
+                                    <Card style={{ width: '18rem' }}>
+                                        {/* <Card.Img variant="top" src={logo} /> */}
+                                        <Card.Body>
+                                            <Card.Title>Home Reservation</Card.Title>
+                                            <Card.Text>
+                                                To reserve this home you must... lots of lorem ipsum dolor sit amet,
+                                                consectetur adipiscing elit, sed do eiusmod tempor
+                                                incididunt ut labore et dolore magna aliqua.
+                                            </Card.Text>
+                                            <Button variant="primary">Book Home</Button>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </div>
                     </div>
                 </Col>
                 <Col sm={2}>
@@ -162,8 +197,9 @@ export default function SingleHome2() {
                             <p>2 Bath</p>
                         </Col>
                     </div>
+
                 </Col>
             </Container>
-        </div>
+        </div >
     )
 }

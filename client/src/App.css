@@ -69,6 +69,20 @@ ul {
   padding-top: 150px;
 }
 /* Single Home Page */
+.singleHomeParentContainer {
+  padding-top: 1em;
+  display: flex;
+  flex-direction: row;
+}
+.singleHomePageRight {
+  padding-top: 3em;
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: right;
+}
 .propertyPictures {
   width: 100%;
   display: flex;
@@ -77,11 +91,21 @@ ul {
   justify-content: space-around;
   align-items: center;
 }
+.commentsSection {
+  border-color: black;
+}
+.reservationsContainer {
+  padding-top: 2em;
+  padding-bottom: 3em;
+}
 /* Single Home Page END */
 
 .slashedPriced {
   font-style: italic;
   text-decoration: line-through;
+}
+.aboutHomeContainer {
+  padding-top: 3em;
 }
 
 /* Calendar */
@@ -125,11 +149,11 @@ ul {
 .footer {
   display: flex;
   justify-content: space-around;
-  position: fixed;
+  padding-top: 1em;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #ecd5bb;
+  background-color: #afd8f2;
   color: rgb(92, 30, 30);
   list-style: none;
   text-align: center;
@@ -179,28 +203,9 @@ ul {
   align-items: center;
 }
 
-/* Single Home Display */
-.singleHomeParentContainer {
-  display: flex;
-  flex-direction: row;
-}
-/* .singleHomePageLeft {
-  min-width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
 .singleHomePageCenter {
   min-width: 100%;
 }
-.singleHomePageRight {
-  min-width: 50%;
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: right;
-} */
 
 .ammenityListContainer {
   display: flex;
