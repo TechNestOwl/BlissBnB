@@ -65,6 +65,36 @@ export default function App() {
   };
   return (
     <div className="App">
+          <div>
+            <Router>
+              <Navigation />
+              <Switch>
+                <Route exact path="/" component={Landing} />
+                <Route path="/homedisplay" component={HomeDisplay} />
+                <Route path="/contact" component={Contact} />
+    
+                <Route exact path="/signin">
+                  <SignIn
+                    signIn={signIn}
+                    signInUserFormData={signInUserFormData}
+                    setSignInUserFormData={setSignInUserFormData}
+                  />
+                </Route>
+                <Route exact path="/signup">
+                  <SignUp
+                    signUp={signUp}
+                    setUserFormData={setUserFormData}
+                    userFormData={userFormData}
+                  />
+                </Route>
+                <Route path="/singlehome" component={SingleHomeDisplay} />
+                <Route path="/singlehome2" component={SingleHome2} />
+                <Route path="/homesearch" component={HomeSearchPage} />
+                <Route path="*" component={NotFound} />
+              </Switch>
+              <Footer />
+            </Router>
+          </div>
       <h1>Sign Up</h1>
       <form onSubmit={signUp}>
         <input
@@ -119,36 +149,6 @@ export default function App() {
       </form>
       <h1>Welcome {user}</h1>
       <button onClick={signOut}>Sign Out</button>
-      <div>
-        <Router>
-          <Navigation />
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route path="/homedisplay" component={HomeDisplay} />
-            <Route path="/contact" component={Contact} />
-
-            <Route exact path="/signin">
-              <SignIn
-                signIn={signIn}
-                signInUserFormData={signInUserFormData}
-                setSignInUserFormData={setSignInUserFormData}
-              />
-            </Route>
-            <Route exact path="/signup">
-              <SignUp
-                signUp={signUp}
-                setUserFormData={setUserFormData}
-                userFormData={userFormData}
-              />
-            </Route>
-            <Route path="/singlehome" component={SingleHomeDisplay} />
-            <Route path="/singlehome2" component={SingleHome2} />
-            <Route path="/homesearch" component={HomeSearchPage} />
-            <Route path="*" component={NotFound} />
-          </Switch>
-          <Footer />
-        </Router>
-      </div>
     </div>
   );
 }
