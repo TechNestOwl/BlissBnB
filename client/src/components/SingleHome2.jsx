@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel, Media, InputGroup, FormControl } from 'react-bootstrap'
+import { OverlayTrigger, Button, Container, Row, Col, Card, Tooltip, Image, ListGroup, Carousel, Modal, Media, InputGroup, FormControl } from 'react-bootstrap'
 // import { useDispatch, useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
 import coastalbeachhouse from "../assets/coastalbeachhouse.jpeg"
@@ -16,6 +16,7 @@ export default function SingleHome2() {
     const [user, setUser] = useState(
         parsed ? parsed.currentSession?.user?.email : ""
     );
+    const [show, setShow] = useState(false);
     // const dispatch = useDispatch();
     // const [calDate, setCalDate] = useState("");
 
@@ -29,7 +30,11 @@ export default function SingleHome2() {
     const postComment = () => {
         alert("Comments are currentlyu disabled")
     }
-
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Don't click me!
+        </Tooltip>
+    );
     return (
         <div>
             <Container className="singleHomeParentContainer">
@@ -137,7 +142,13 @@ export default function SingleHome2() {
                                     aria-describedby="basic-addon2"
                                 />
                                 <InputGroup.Append>
-                                    <Button variant="outline-secondary" onClick={postComment}>Post</Button>
+                                    <OverlayTrigger
+                                        placement="right"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={renderTooltip}
+                                    >
+                                        <Button variant="success" onClick={postComment}>Post</Button>
+                                    </OverlayTrigger>
                                 </InputGroup.Append>
                             </InputGroup>
                         </div>
@@ -177,7 +188,28 @@ export default function SingleHome2() {
                                                 consectetur adipiscing elit, sed do eiusmod tempor
                                                 incididunt ut labore et dolore magna aliqua.
                                             </Card.Text>
-                                            <Button variant="primary">Book Home</Button>
+                                            <div>
+                                                <Button variant="primary" onClick={() => setShow(true)}>
+                                                    Reserve Home
+                                                </Button>
+                                                <Modal
+                                                    show={show}
+                                                    onHide={() => setShow(false)}
+                                                    dialogClassName="modal-90w"
+                                                    aria-labelledby="example-custom-modal-styling-title"
+                                                >
+                                                    <Modal.Header closeButton>
+                                                        <Modal.Title id="Cannot Reserve">
+                                                            Home reservations are not currently available
+                                                        </Modal.Title>
+                                                    </Modal.Header>
+                                                    <Modal.Body>
+                                                        <p>
+                                                            Single family home with with beach front access and loads of lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                        </p>
+                                                    </Modal.Body>
+                                                </Modal>
+                                            </div>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -206,6 +238,7 @@ export default function SingleHome2() {
 
                 </Col>
             </Container>
+
         </div >
     )
 }
