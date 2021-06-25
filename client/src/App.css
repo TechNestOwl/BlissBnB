@@ -39,6 +39,23 @@ ul {
 }
 /* navigation end */
 
+/* Landing page */
+
+.liveAnywhere {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.landingCardText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.landigCardPhotos {
+  border-radius: 5%;
+}
 /* SignUp */
 
 .signUpForm {
