@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel, Modal, Media, InputGroup, FormControl } from 'react-bootstrap'
+import { OverlayTrigger, Button, Container, Row, Col, Card, Tooltip, Image, ListGroup, Carousel, Modal, Media, InputGroup, FormControl } from 'react-bootstrap'
 // import { useDispatch, useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
 import coastalbeachhouse from "../assets/coastalbeachhouse.jpeg"
@@ -30,7 +30,11 @@ export default function SingleHome2() {
     const postComment = () => {
         alert("Comments are currentlyu disabled")
     }
-
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Don't click me!
+        </Tooltip>
+    );
     return (
         <div>
             <Container className="singleHomeParentContainer">
@@ -138,7 +142,13 @@ export default function SingleHome2() {
                                     aria-describedby="basic-addon2"
                                 />
                                 <InputGroup.Append>
-                                    <Button variant="outline-secondary" onClick={postComment}>Post</Button>
+                                    <OverlayTrigger
+                                        placement="right"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={renderTooltip}
+                                    >
+                                        <Button variant="success" onClick={postComment}>Post</Button>
+                                    </OverlayTrigger>
                                 </InputGroup.Append>
                             </InputGroup>
                         </div>
@@ -182,7 +192,6 @@ export default function SingleHome2() {
                                                 <Button variant="primary" onClick={() => setShow(true)}>
                                                     Reserve Home
                                                 </Button>
-
                                                 <Modal
                                                     show={show}
                                                     onHide={() => setShow(false)}
