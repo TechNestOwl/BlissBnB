@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel, Media } from 'react-bootstrap'
+import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel, Media, InputGroup, FormControl } from 'react-bootstrap'
 // import { useDispatch, useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
 import coastalbeachhouse from "../assets/coastalbeachhouse.jpeg"
@@ -124,6 +124,16 @@ export default function SingleHome2() {
                                     </p>
                                 </Media.Body>
                             </Media>
+                            <InputGroup className="mb-3">
+                                <FormControl
+                                    placeholder="Enter comment.."
+                                    aria-label="userComment"
+                                    aria-describedby="basic-addon2"
+                                />
+                                <InputGroup.Append>
+                                    <Button variant="outline-secondary">Post</Button>
+                                </InputGroup.Append>
+                            </InputGroup>
                         </div>
 
 
