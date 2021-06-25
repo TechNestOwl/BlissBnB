@@ -147,7 +147,7 @@ export default function SingleHome2() {
                                         delay={{ show: 250, hide: 400 }}
                                         overlay={renderTooltip}
                                     >
-                                        <Button variant="success" onClick={postComment}>Post</Button>
+                                        <Button variant="primary" onClick={postComment}>Post</Button>
                                     </OverlayTrigger>
                                 </InputGroup.Append>
                             </InputGroup>
