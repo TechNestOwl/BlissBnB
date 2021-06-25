@@ -71,6 +71,17 @@ ul {
 /* Single Home Page */
 .singleHomeParentContainer {
   padding-top: 1em;
+  display: flex;
+  flex-direction: row;
+}
+.singleHomePageRight {
+  padding-top: 3em;
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: right;
 }
 .propertyPictures {
   width: 100%;
@@ -188,28 +199,9 @@ ul {
   align-items: center;
 }
 
-/* Single Home Display */
-.singleHomeParentContainer {
-  display: flex;
-  flex-direction: row;
-}
-/* .singleHomePageLeft {
-  min-width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
 .singleHomePageCenter {
   min-width: 100%;
 }
-.singleHomePageRight {
-  min-width: 50%;
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: right;
-} */
 
 .ammenityListContainer {
   display: flex;
