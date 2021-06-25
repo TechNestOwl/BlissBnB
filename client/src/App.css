@@ -96,6 +96,7 @@ ul {
 }
 .reservationsContainer {
   padding-top: 2em;
+  padding-bottom: 3em;
 }
 /* Single Home Page END */
 
@@ -148,11 +149,11 @@ ul {
 .footer {
   display: flex;
   justify-content: space-around;
-  position: fixed;
+  padding-top: 1em;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #ecd5bb;
+  background-color: #efeae4;
   color: rgb(92, 30, 30);
   list-style: none;
   text-align: center;
