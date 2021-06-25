@@ -23,7 +23,9 @@ export default function SingleHome2() {
         alert("Resrvation date set");
 
     }
-
+    const postComment = () => {
+        alert("Comments are currentlyu disabled")
+    }
 
     return (
         <div>
@@ -131,7 +133,7 @@ export default function SingleHome2() {
                                     aria-describedby="basic-addon2"
                                 />
                                 <InputGroup.Append>
-                                    <Button variant="outline-secondary">Post</Button>
+                                    <Button variant="outline-secondary" onClick={postComment}>Post</Button>
                                 </InputGroup.Append>
                             </InputGroup>
                         </div>
