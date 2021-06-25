@@ -11,8 +11,11 @@ import hostHeadshot from "../assets/hostImage.jpeg";
 
 
 export default function SingleHome2() {
-
-
+    const userInStorage = localStorage.getItem("supabase.auth.token");
+    const parsed = JSON.parse(userInStorage);
+    const [user, setUser] = useState(
+        parsed ? parsed.currentSession?.user?.email : ""
+    );
     // const dispatch = useDispatch();
     // const [calDate, setCalDate] = useState("");
 
@@ -126,6 +129,7 @@ export default function SingleHome2() {
                                     </p>
                                 </Media.Body>
                             </Media>
+                            <h6>User: {user}</h6>
                             <InputGroup className="mb-3">
                                 <FormControl
                                     placeholder="Enter comment.."
