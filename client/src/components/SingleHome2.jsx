@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel } from 'react-bootstrap'
+import { Button, Container, Row, Col, Card, Image, ListGroup, Carousel, Media } from 'react-bootstrap'
 // import { useDispatch, useSelector } from 'react-redux';
 import Calendar from 'react-calendar';
 import coastalbeachhouse from "../assets/coastalbeachhouse.jpeg"
@@ -103,6 +103,29 @@ export default function SingleHome2() {
                             </Col>
 
                         </Row>
+                        <div className="commentsSection">
+                            <h3>Comments:</h3>
+                            <Media>
+                                <img
+                                    width={64}
+                                    height={64}
+                                    className="mr-3"
+                                    src={hostHeadshot}
+                                    alt="Generic placeholder"
+                                    style={{ borderRadius: 30 }}
+                                />
+                                <Media.Body>
+                                    <h5>Welcome!</h5>
+                                    <p>
+                                        This is my lovely home with renovated everything. Herea are details, Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                        ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
+                                        tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+                                        Donec lacinia congue felis in faucibus.
+                                    </p>
+                                </Media.Body>
+                            </Media>
+                        </div>
+
 
                         {/* Columns are always 50% wide, on mobile and desktop */}
                         <Row>
@@ -162,6 +185,7 @@ export default function SingleHome2() {
                             <p>2 Bath</p>
                         </Col>
                     </div>
+
                 </Col>
             </Container>
         </div>
