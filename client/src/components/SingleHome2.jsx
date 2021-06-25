@@ -75,34 +75,34 @@ export default function SingleHome2() {
 
 
                         {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
-                        <Row>
-                            <Col sm={8}>
-                                <h4>About this space:</h4>
-                                <p>Single family home with with beach front access and loads of lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-                            </Col>
-                            <Col sm={4}>
-                                {/* <h4>About the home</h4>
+                        <div className="aboutHomeContainer">
+                            <Row>
+                                <Col sm={8}>
+                                    <h4>About this space:</h4>
+                                    <p>Single family home with with beach front access and loads of lorem ipsum dolor sit amet,
+                                        consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                                </Col>
+                                <Col sm={4}>
+                                    {/* <h4>About the home</h4>
                                 <p>6 Guests</p>
                                 <p>3 Bedroom</p>
                                 <p>2 Bath</p> */}
-                                <div className="ammenityListContainer">
-                                    <h4>Amenities</h4>
-                                    <ListGroup variant="flush">
-                                        <ListGroup.Item>Hottub</ListGroup.Item>
-                                        <ListGroup.Item>Firepit</ListGroup.Item>
-                                        <ListGroup.Item>Washer/Dryer</ListGroup.Item>
-                                        <ListGroup.Item>Full stone fireplace</ListGroup.Item>
-                                        <ListGroup.Item>Full kitchen</ListGroup.Item>
-                                        <ListGroup.Item>Beach Access</ListGroup.Item>
-                                        <ListGroup.Item>Charcoal BBQ grill</ListGroup.Item>
-                                    </ListGroup>
-
-                                </div>
-                            </Col>
-
-                        </Row>
+                                    <div className="ammenityListContainer">
+                                        <h4>Amenities</h4>
+                                        <ListGroup variant="flush">
+                                            <ListGroup.Item>Hottub</ListGroup.Item>
+                                            <ListGroup.Item>Firepit</ListGroup.Item>
+                                            <ListGroup.Item>Washer/Dryer</ListGroup.Item>
+                                            <ListGroup.Item>Full stone fireplace</ListGroup.Item>
+                                            <ListGroup.Item>Full kitchen</ListGroup.Item>
+                                            <ListGroup.Item>Beach Access</ListGroup.Item>
+                                            <ListGroup.Item>Charcoal BBQ grill</ListGroup.Item>
+                                        </ListGroup>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
                         <div className="commentsSection">
                             <h3>Comments:</h3>
                             <Media>
@@ -198,6 +198,6 @@ export default function SingleHome2() {
 
                 </Col>
             </Container>
-        </div>
+        </div >
     )
 }

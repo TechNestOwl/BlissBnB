@@ -86,6 +86,9 @@ ul {
   font-style: italic;
   text-decoration: line-through;
 }
+.aboutHomeContainer {
+  padding-top: 3em;
+}
 
 /* Calendar */
 .react-calendar__month-view__weekdays {
