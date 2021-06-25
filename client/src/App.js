@@ -32,6 +32,7 @@ export default function App() {
   );
   const signUp = async (e) => {
     e.preventDefault();
+    console.log("tri")
     const { user, session, error } = await supabase.auth.signUp({
       Username: userFormData.Username,
       firstName: userFormData.firstName,
@@ -74,7 +75,7 @@ export default function App() {
                 <Route path="/contact" component={Contact} />
     
                 <Route exact path="/signin">
-                  <SignIn
+                  <SignIn 
                     signIn={signIn}
                     signInUserFormData={signInUserFormData}
                     setSignInUserFormData={setSignInUserFormData}
@@ -87,7 +88,10 @@ export default function App() {
                     userFormData={userFormData}
                   />
                 </Route>
-                <Route path="/singlehome" component={SingleHomeDisplay} />
+                {/* <Route path="/singlehome" component={SingleHomeDisplay} /> */}
+                <Route path="/singlehome">
+                  {!user ? <SignIn/> :<SingleHomeDisplay/>}
+                </Route>
                 <Route path="/singlehome2" component={SingleHome2} />
                 <Route path="/homesearch" component={HomeSearchPage} />
                 <Route path="*" component={NotFound} />
@@ -95,8 +99,8 @@ export default function App() {
               <Footer />
             </Router>
           </div>
-      <h1>Sign Up</h1>
-      <form onSubmit={signUp}>
+      {/* <h1>Sign Up</h1> */}
+      {/* <form onSubmit={signUp}>
         <input
           name="email"
           onChange={(e) =>
@@ -148,7 +152,7 @@ export default function App() {
         <input type="submit" placeholder="login" />
       </form>
       <h1>Welcome {user}</h1>
-      <button onClick={signOut}>Sign Out</button>
+      <button onClick={signOut}>Sign Out</button> */}
     </div>
   );
 }
