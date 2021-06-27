@@ -88,7 +88,7 @@ export default function App() {
               />
             </Route>
             <Route path="/singlehome" component={SingleHomeDisplay} />
-            <Route path="/singlehome2" component={SingleHome2} />
+            <Route path="/singlehome2/:id" component={SingleHome2} />
             <Route path="/homesearch" component={HomeSearchPage} />
             <Route path="*" component={NotFound} />
           </Switch>
