@@ -217,6 +217,21 @@ ul {
 
 @media screen and (max-width: 525px) {
   .nav-logo {
-    height: 20px;
+    height: 220px;
+    margin-right: 8rem;
+  }
+  .navLinkContainer {
+    width: 5%;
+    align-items: baseline;
+    margin-right: 30rem;
+  }
+  .navLinks {
+    margin-right: 3rem;
+    margin-top: 0rem;
+  }
+  .navSearch {
+    margin-top: 10rem;
+    margin-right: 10rem;
+    width: 15rem;
   }
 }

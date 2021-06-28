@@ -223,9 +223,10 @@ export default function SingleHome2() {
                                             <form onSubmit={handleSubmit} className="reservatinForm">
                                                 <p>Guests:</p>
                                                 <button>-</button>
-                                                <span >0</span>
+                                                <span> 0 </span>
                                                 <button>+</button>
-                                                <button className="submitBtn" type="submit">Add Date</button>
+                                                <br></br>
+                                                <Button variant="primary" type="submit"> Book Date</Button>
                                             </form>
                                         </div>
                                     </Col>
