@@ -50,7 +50,10 @@ export default function Navigation() {
                 </div>
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
-                        Signed in as:
+                        <Link to="/signin">
+                            Signed in as:
+                        </Link>
+
                         <Link to="/signin">
                             <a href="#login">{user}</a>
                         </Link>
