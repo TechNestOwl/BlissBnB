@@ -1,190 +1,190 @@
 * {
-  margin: 0;
+	margin: 0;
 }
 
 body {
-  background-color: #e7f2f8;
+	background-color: #e7f2f8;
 }
 
 /* navigation start */
 
 nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 15vh;
-  max-height: 15vh;
-  background-color: #54627b;
-  padding: 5px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 15vh;
+	max-height: 15vh;
+	background-color: #54627b;
+	padding: 5px;
 }
 
 .navLinkContainer {
-  width: 40%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  text-decoration: none;
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: row;
+	text-decoration: none;
 }
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 .nav-log {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: fixed;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: fixed;
 }
 /* navigation end */
 
 /* Landing page */
 
 .liveAnywhere {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 .landingCardText {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 .landigCardPhotos {
-  border-radius: 5%;
+	border-radius: 5%;
 }
 /* SignUp */
 
 .signUpForm {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 8vh;
-  max-height: 15vh;
-  padding-top: 150px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 8vh;
+	max-height: 15vh;
+	padding-top: 150px;
 }
 /* Single Home Page */
 .singleHomeParentContainer {
-  padding-top: 1em;
-  display: flex;
-  flex-direction: row;
+	padding-top: 1em;
+	display: flex;
+	flex-direction: row;
 }
 .singleHomePageRight {
-  padding-top: 3em;
-  min-width: 50%;
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: right;
+	padding-top: 3em;
+	min-width: 50%;
+	display: flex;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: right;
 }
 .propertyPictures {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  /* flex: wrap; */
-  justify-content: space-around;
-  align-items: center;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	/* flex: wrap; */
+	justify-content: space-around;
+	align-items: center;
 }
 .commentsSection {
-  border-color: black;
+	border-color: black;
 }
 .reservationsContainer {
-  padding-top: 2em;
-  padding-bottom: 3em;
+	padding-top: 2em;
+	padding-bottom: 3em;
 }
 /* Single Home Page END */
 
 .slashedPriced {
-  font-style: italic;
-  text-decoration: line-through;
+	font-style: italic;
+	text-decoration: line-through;
 }
 .aboutHomeContainer {
-  padding-top: 3em;
+	padding-top: 3em;
 }
 
 /* Calendar */
 .react-calendar__month-view__weekdays {
-  color: gray;
+	color: gray;
 }
 
 .react-calendar__navigation button {
-  font-size: 1em;
+	font-size: 1em;
 }
 
 /* Contat Form */
 .contactForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 /* searchHome Page */
 
 .homeSearchFormContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .homeSearchForm {
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
-  width: 60%;
+	display: flex;
+	flex-direction: column;
+	padding: 25px;
+	width: 60%;
 }
 .searchFormBtn {
-  justify-content: center;
-  align-items: center;
-  width: 100px;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
 }
 
 /* Footer start */
 .footer {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 1em;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #afd8f2;
-  color: rgb(92, 30, 30);
-  list-style: none;
-  text-align: center;
-  text-decoration: none;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 1em;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #afd8f2;
+	color: rgb(92, 30, 30);
+	list-style: none;
+	text-align: center;
+	text-decoration: none;
 }
 .footer li {
-  color: rgb(58, 28, 28);
-  text-decoration: none;
+	color: rgb(58, 28, 28);
+	text-decoration: none;
 }
 .footerText {
-  font-size: smaller;
+	font-size: smaller;
 }
 /* Footer end */
 
 /* Not Found */
 .notFound {
-  text-align: center;
+	text-align: center;
 }
 .notFoundBtn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .errMessage {
-  color: red;
-  /* text-decoration: double; */
+	color: red;
+	/* text-decoration: double; */
 }
 .searchbtn {
-  background-color: #710117;
-  color: aliceblue;
+	background-color: #710117;
+	color: aliceblue;
 }
 
 /* Home Display */
@@ -195,27 +195,42 @@ ul {
 } */
 
 .homeCardContainer {
-  padding-top: 1em;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+	padding-top: 1em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
 }
 
 .singleHomePageCenter {
-  min-width: 100%;
+	min-width: 100%;
 }
 
 .ammenityListContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 @media screen and (max-width: 525px) {
-  .nav-logo {
-    height: 20px;
-  }
+	.nav-logo {
+		height: 220px;
+		margin-right: 8rem;
+	}
+	.navLinkContainer {
+		width: 5%;
+		align-items: baseline;
+		margin-right: 30rem;
+	}
+	.navLinks {
+		margin-right: 3rem;
+		margin-top: 0rem;
+	}
+	.navSearch {
+		margin-top: 10rem;
+		margin-right: 10rem;
+		width: 15rem;
+	}
 }
