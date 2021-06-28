@@ -7,9 +7,9 @@ import Map from "./Map.jsx";
 // import "../styles/Homes.css";
 // import HomeCard from "./HomeCard.jsx";
 import { Button, Card, Badge, Jumbotron, Container, Row, Col } from 'react-bootstrap'
-import beachhouse from "../assets/coastalbeachhouse.jpeg";
-import loghouse from "../assets/loghome.jpeg";
-import lakehouse from "../assets/lakehome.png";
+// import beachhouse from "../assets/coastalbeachhouse.jpeg";
+// import loghouse from "../assets/loghome.jpeg";
+// import lakehouse from "../assets/lakehome.png";
 import { Link } from 'react-router-dom';
 import { createClient } from "@supabase/supabase-js";
 import { useDispatch } from "react-redux"
@@ -31,7 +31,19 @@ export default function Homes() {
         }
         fetchHomes()
 
+        const urlImage = () => {
+            // e.preventDefault();
+           supabase
+            .from('Homes')
+            .select('*')
+            // .gt("id",1)
+            .then(data=>setHomes(data.data))
+            .catch(console.error)
+            console.log("Testing")
+          };
+          urlImage()
     }, [])
+    console.log(homes)
     return (
         <div className="homes__container">
             <Container>
@@ -49,7 +61,7 @@ export default function Homes() {
 
                                 return (
                                     <Card style={{ width: "20rem", height: "800px" }}>
-                                        <Card.Img variant="top" src={beachhouse} />
+                                        <Card.Img variant="top" src={home.URL} />
                                         <Card.Body>
                                             <Card.Title>
                                                 {/* // title */}
@@ -61,7 +73,7 @@ export default function Homes() {
                                             </Card.Title>
                                             {/* // description */}
                                             <Card.Text>{home.Description}</Card.Text>
-                                            <Link to="/singlehome2">
+                                            <Link to={`/singlehome2/${home.id}`}>
                                                 <Button variant="primary">Book Home</Button>
                                             </Link>
                                         </Card.Body>
