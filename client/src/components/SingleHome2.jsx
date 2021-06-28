@@ -226,8 +226,7 @@ export default function SingleHome2() {
                                                 <span> 0 </span>
                                                 <button>+</button>
                                                 <br></br>
-                                                
-                                                <button className="submitBtn" type="submit">Add Date</button>
+                                                <Button variant="primary" type="submit"> Book Date</Button>
                                             </form>
                                         </div>
                                     </Col>
