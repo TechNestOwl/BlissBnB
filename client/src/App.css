@@ -148,7 +148,6 @@ ul {
 /* Footer start */
 .footer {
   display: flex;
-  position: absolute;
   justify-content: space-around;
   padding-top: 1em;
   left: 0;
@@ -233,5 +232,6 @@ ul {
     margin-top: 10rem;
     margin-right: 10rem;
     width: 15rem;
+
   }
 }
