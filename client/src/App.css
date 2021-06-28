@@ -148,6 +148,7 @@ ul {
 /* Footer start */
 .footer {
   display: flex;
+  position: absolute;
   justify-content: space-around;
   padding-top: 1em;
   left: 0;
